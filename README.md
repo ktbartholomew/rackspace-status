@@ -12,6 +12,8 @@ This repository is a completely static HTML file grabbed from the Statuspage web
 
 `$ grunt`
 
+View the status page at `http://localhost:3000`.
+
 ## Building
 
 `$ grunt build`
