@@ -1,1 +1,1 @@
-console.log('foobar is FUBAR');
+document.body.id = 'rax-status-page';

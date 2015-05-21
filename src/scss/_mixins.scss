@@ -1,0 +1,14 @@
+@function tint($color, $percent){
+  @return mix(white, $color, $percent);
+}
+ 
+// Add percentage of black to a color
+@function shade($color, $percent){
+  @return mix(black, $color, $percent);
+}
+
+@mixin centered-container($max-width) {
+    margin: 0 auto;
+    max-width: $max-width;
+    width: 90%;
+}

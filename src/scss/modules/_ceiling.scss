@@ -1,0 +1,48 @@
+.rax-ceiling {
+    color: tint($black, 40%);
+    display: block;
+    font-size: 10px;
+    font-weight: 600;
+    height: 42px;
+    width: 100%;
+
+    .support-links {
+        @include centered-container(960px);
+    }
+
+    .support-link {
+        display: inline-block;
+        line-height: 42px;
+        margin-right: -0.25em;
+        position: relative;
+
+        &:not(:last-child) {
+            margin-right: 10px;
+            padding-right: 10px;
+
+            &:after {
+                background: tint($black, 40%);
+                content: '';
+                display: block;
+                height: 18px;
+                position: absolute;
+                right: -1px;
+                top: 12px;
+                width: 1px;
+            }
+        }
+
+        .label {
+            text-transform: uppercase;
+        }
+
+        a {
+            color: tint($black, 25%);
+            text-decoration: none;
+
+            &:hover, &:focus, &:active {
+                color: $rax-blue;
+            }
+        }
+    }
+}

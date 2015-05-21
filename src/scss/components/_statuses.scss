@@ -1,0 +1,18 @@
+@mixin background-operational () {
+    background: $status-operational;
+    color: $white;
+}
+
+@mixin background-degraded () {
+    background: $status-degraded;
+}
+
+@mixin background-minor () {
+    background: $status-minor;
+    color: $white;
+}
+
+@mixin background-major () {
+    background: $rax-red;
+    color: $white;
+}

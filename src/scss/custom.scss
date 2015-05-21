@@ -1,4 +1,13 @@
+@import "../components/bourbon/app/assets/stylesheets/bourbon";
+@import "variables";
+@import "mixins";
 @import "fonts";
+
+@import "components/statuses";
+
+@import "modules/banner";
+@import "modules/ceiling";
+@import "modules/navbar";
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -6,6 +15,10 @@ body {
 
 body * {
   -webkit-font-antialiasing: antialiased;
+}
+
+.container {
+  max-width: 960px;
 }
 
 .custom-header-container {

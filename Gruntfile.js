@@ -1,7 +1,18 @@
+var request = require('request');
+
 module.exports = function (grunt) {
+    if(typeof process.env.SP_API_KEY === 'undefined') {
+        console.warn('[WARNING]: Environment variable SP_API_KEY is not set. Connect will be unable to proxy API requests to StatusPage.');
+    }
+
     grunt.initConfig({
         concurrent: {
-            dev: ['connect:dev', 'watch:sass']
+            dev: {
+                tasks: ['connect:dev', 'watch:html', 'watch:sass'],
+                options: {
+                    logConcurrentOutput: true
+                }
+            }
         },
         connect: {
             dev: {
@@ -9,7 +20,29 @@ module.exports = function (grunt) {
                     port: 3000,
                     hostname: '*',
                     keepalive: true,
-                    base: 'public'
+                    base: 'public',
+                    middleware: function (connect, options, middlewares) {
+                        middlewares.unshift(function (req, res, next) {
+                            if(! req.url.match(/^\/api/)) {
+                                return next();
+                            }
+
+                            var apiEndpoint = req.url.match(/^\/api/).input;
+
+                            request
+                            .get({
+                                url: 'https://gk201j90pkjt.statuspage.io' + apiEndpoint,
+                                headers: {
+                                    'Authorization': 'OAuth ' + process.env.SP_API_KEY
+                                }
+                            })
+                            .pipe(res);
+
+                            // next();
+                        });
+
+                        return middlewares;
+                    }
                 }
             }
         },
@@ -48,8 +81,12 @@ module.exports = function (grunt) {
             }
         },
         watch: {
+            html: {
+                files: ['src/html/**/*', 'src/js/**/*'],
+                tasks: ['processhtml:dev']
+            },
             sass: {
-                files: ['src/scss/**.*.scss'],
+                files: ['src/scss/**/*'],
                 tasks: ['sass:dev']
             }
         }

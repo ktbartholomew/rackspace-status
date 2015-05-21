@@ -1,0 +1,24 @@
+.rax-banner {
+    padding: 120px 0;
+    text-align: center;
+
+    &.operational {
+        @include background-operational();
+    }
+
+    &.degraded {
+        @include background-degraded();   
+    }
+
+    &.minor {
+        @include background-minor();   
+    }
+
+    &.major {
+        @include background-major();   
+    }
+
+    h1 {
+        font-weight: 300;
+    }
+}
