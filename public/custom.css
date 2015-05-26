@@ -305,31 +305,55 @@
   border-color: #f1c40f;
 }
 
-.light {
+.layout-content.status.status-index .components-section .component-container .component-status {
+  float: none;
+}
+
+.layout-content.status.status-index .components-section .component-container .name {
+  padding-left: 3px;
+}
+
+.layout-content.status.status-index .components-section .component-container.is-group.open > .component-inner-container .component-status {
+  display: inline-block;
+}
+
+.status-green .component-status {
+  background-image: radial-gradient(#6ddb93, #2fcc66);
+  box-shadow: 0px 0px 4px #43d175;
+}
+
+.status-red .component-status {
+  background-image: radial-gradient(#d54c64, #c40022);
+  box-shadow: 0px 0px 4px #c91938;
+}
+
+.light, .component-status {
   background: #e5e5e5;
   border-radius: 6px;
   display: inline-block;
   height: 12px;
   margin-right: 0.25em;
+  overflow: hidden;
+  text-indent: -9999px;
   width: 12px;
 }
 
-.light.major_outage {
+.light.major_outage, .component-status.major_outage {
   background-image: radial-gradient(#d54c64, #c40022);
   box-shadow: 0px 0px 4px #c91938;
 }
 
-.light.partial_outage {
+.light.partial_outage, .component-status.partial_outage {
   background-image: radial-gradient(#eda464, #e67e22);
   box-shadow: 0px 0px 4px #e88a38;
 }
 
-.light.degraded_performance {
+.light.degraded_performance, .component-status.degraded_performance {
   background-image: radial-gradient(#f5d557, #f1c40f);
   box-shadow: 0px 0px 4px #f2c926;
 }
 
-.light.operational {
+.light.operational, .component-status.operational {
   background-image: radial-gradient(#6ddb93, #2fcc66);
   box-shadow: 0px 0px 4px #43d175;
 }

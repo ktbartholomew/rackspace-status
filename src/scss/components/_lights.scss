@@ -1,9 +1,11 @@
-.light {
+.light, .component-status {
   background: shade($white, 10%);
   border-radius: 6px;
   display: inline-block;
   height: 12px;
   margin-right: 0.25em;
+  overflow: hidden;
+  text-indent: -9999px;
   width: 12px;
 
   &.major_outage {

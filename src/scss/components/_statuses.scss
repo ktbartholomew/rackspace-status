@@ -16,3 +16,28 @@
     background: $rax-red;
     color: $white;
 }
+
+// override SP styles
+.layout-content.status.status-index .components-section .component-container {
+  .component-status {
+    float: none;
+  }
+
+  .name {
+    padding-left: 3px;
+  }
+
+  &.is-group.open>.component-inner-container .component-status {
+    display: inline-block;
+  }
+}
+
+.status-green .component-status {
+  background-image: radial-gradient(tint($status-operational, 30%), $status-operational);
+  box-shadow: 0px 0px 4px tint($status-operational, 10%);
+}
+
+.status-red .component-status {
+  background-image: radial-gradient(tint($rax-red, 30%), $rax-red);
+  box-shadow: 0px 0px 4px tint($rax-red, 10%);
+}
