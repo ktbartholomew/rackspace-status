@@ -37,6 +37,16 @@
   box-shadow: 0px 0px 4px tint($status-operational, 10%);
 }
 
+.status-yellow .component-status {
+  background-image: radial-gradient(tint($status-degraded, 30%), $status-degraded);
+  box-shadow: 0px 0px 4px tint($status-degraded, 10%);
+}
+
+.status-orange .component-status {
+  background-image: radial-gradient(tint($status-minor, 30%), $status-minor);
+  box-shadow: 0px 0px 4px tint($status-minor, 10%);
+}
+
 .status-red .component-status {
   background-image: radial-gradient(tint($rax-red, 30%), $rax-red);
   box-shadow: 0px 0px 4px tint($rax-red, 10%);

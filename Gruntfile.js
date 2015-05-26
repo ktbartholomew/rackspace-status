@@ -9,7 +9,7 @@ module.exports = function (grunt) {
         browserify: {
             dev: {
                 files: {
-                    'src/js/main.min.js': ['src/js/main.js']
+                    'src/js/main.build.js': ['src/js/main.js']
                 },
                 options: {
                     transform: ['browserify-compile-templates']
@@ -90,6 +90,13 @@ module.exports = function (grunt) {
                 }
             }
         },
+        uglify: {
+          build: {
+            files: {
+              'src/js/main.min.js': ['src/js/main.build.js']
+            }
+          }
+        },
         watch: {
             html: {
                 files: ['src/html/**/*', 'src/js/**/*', '!src/js/main.min.js'],
@@ -105,10 +112,12 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-browserify');
     grunt.loadNpmTasks('grunt-concurrent');
     grunt.loadNpmTasks('grunt-contrib-connect');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-processhtml');
     grunt.loadNpmTasks('grunt-sass');
 
+
     grunt.registerTask('default', ['processhtml:dev', 'sass:dev', 'concurrent:dev']);
-    grunt.registerTask('build', ['processhtml:build', 'sass:build']);
+    grunt.registerTask('build', ['browserify:dev', 'uglify:build', 'processhtml:build', 'sass:build']);
 }
