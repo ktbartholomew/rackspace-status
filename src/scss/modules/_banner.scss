@@ -1,24 +1,33 @@
 .rax-banner {
+    background: shade($white, 10%);
     padding: 120px 0;
     text-align: center;
 
-    &.operational {
-        @include background-operational();
-    }
-
-    &.degraded {
-        @include background-degraded();   
-    }
-
-    &.minor {
-        @include background-minor();   
-    }
-
-    &.major {
-        @include background-major();   
-    }
-
     h1 {
         font-weight: 300;
+    }
+
+    &.enter {
+      background: transparent;
+      color: transparent;
+      @include transition(background 0.3s 0s ease-in-out, color 0.3s 0s ease-in-out);
+    }
+
+    &.enter-active {
+      &.none {
+          @include background-operational();
+      }
+
+      &.minor {
+          @include background-degraded();
+      }
+
+      &.major {
+          @include background-minor();
+      }
+
+      &.critical {
+          @include background-major();
+      }
     }
 }

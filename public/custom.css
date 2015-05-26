@@ -250,32 +250,125 @@
   unicode-range: U0-0FF, U131, U152-153, U2C 6, U2DA, U2DC, U2000-206F, U2074, U20AC, U2212, U2215, UE0FF, UEFFD, UF000;
 }
 
+.layout-content.status.status-index .unresolved-incidents .unresolved-incident .updates {
+  border-width: 0px;
+  padding: 0;
+}
+
+.layout-content.status.status-index .unresolved-incidents .unresolved-incident .updates .update {
+  margin-bottom: 0;
+}
+
+.unresolved-incidents h4 {
+  margin-bottom: 1em;
+}
+
+.unresolved-incident .incident-details {
+  border-style: solid;
+  border-width: 0px 1px 1px 1px;
+}
+
+.unresolved-incident .incident-details .components h5, .unresolved-incident .incident-details .updates h5 {
+  background: #e5e5e5;
+  font-size: 0.8rem;
+  margin: 0;
+  padding: 0 1.25rem;
+  text-transform: uppercase;
+}
+
+.unresolved-incident .incident-details .components .list, .unresolved-incident .incident-details .updates .list {
+  padding: 1.25rem;
+}
+
+.unresolved-incident .incident-details .updates {
+  border: none;
+}
+
+.unresolved-incident .incident-details .updates .list {
+  padding: 0;
+}
+
+.unresolved-incident .incident-details .updates .list .update {
+  margin: 0;
+  padding: 20px 1.25rem;
+}
+
+.unresolved-incident .incident-details .updates .list .update:not(:last-child) {
+  border-bottom: solid 1px #e5e5e5;
+}
+
+.unresolved-incident.impact-major .incident-details {
+  border-color: #c40022;
+}
+
+.unresolved-incident.impact-minor .incident-details {
+  border-color: #f1c40f;
+}
+
+.light {
+  background: #e5e5e5;
+  border-radius: 6px;
+  display: inline-block;
+  height: 12px;
+  margin-right: 0.25em;
+  width: 12px;
+}
+
+.light.major_outage {
+  background-image: radial-gradient(#d54c64, #c40022);
+  box-shadow: 0px 0px 4px #c91938;
+}
+
+.light.partial_outage {
+  background-image: radial-gradient(#eda464, #e67e22);
+  box-shadow: 0px 0px 4px #e88a38;
+}
+
+.light.degraded_performance {
+  background-image: radial-gradient(#f5d557, #f1c40f);
+  box-shadow: 0px 0px 4px #f2c926;
+}
+
+.light.operational {
+  background-image: radial-gradient(#6ddb93, #2fcc66);
+  box-shadow: 0px 0px 4px #43d175;
+}
+
 .rax-banner {
+  background: #e5e5e5;
   padding: 120px 0;
   text-align: center;
 }
 
-.rax-banner.operational {
+.rax-banner h1 {
+  font-weight: 300;
+}
+
+.rax-banner.enter {
+  background: transparent;
+  color: transparent;
+  -webkit-transition: background 0.3s 0s ease-in-out, color 0.3s 0s ease-in-out;
+  -moz-transition: background 0.3s 0s ease-in-out, color 0.3s 0s ease-in-out;
+  transition: background 0.3s 0s ease-in-out, color 0.3s 0s ease-in-out;
+}
+
+.rax-banner.enter-active.none {
   background: #2fcc66;
   color: white;
 }
 
-.rax-banner.degraded {
+.rax-banner.enter-active.minor {
   background: #f1c40f;
 }
 
-.rax-banner.minor {
+.rax-banner.enter-active.major {
   background: #e67e22;
   color: white;
 }
 
-.rax-banner.major {
+.rax-banner.enter-active.critical {
   background: #c40022;
   color: white;
-}
-
-.rax-banner h1 {
-  font-weight: 300;
 }
 
 .rax-ceiling {
@@ -379,88 +472,19 @@ body {
 }
 
 body * {
-  -webkit-font-antialiasing: antialiased;
+  -webkit-font-smoothing: antialiased;
 }
 
 .container {
   max-width: 960px;
 }
 
-.custom-header-container .header-top {
-  font-size: 10px;
-  padding: 5px 0;
-  color: #777;
+.layout-content.status.status-index .status-day .update-title.impact-major a, .layout-content.status.status-index .status-day .update-title.impact-major a:hover, .layout-content.status.status-index .page-status.status-major, .layout-content.status.status-index .unresolved-incident.impact-major .incident-title {
+  background-color: #c40022;
 }
 
-.custom-header-container .header-top strong {
-  color: #333;
-}
-
-.custom-header-container .header-top span:first-child {
-  display: inline-block;
-  margin-right: 10px;
-  padding-right: 10px;
-  border-right: 1px solid #666;
-}
-
-.custom-header-container .header-bottom {
-  background-color: #333;
-  padding: 15px 0;
-}
-
-.custom-header-container .header-bottom img {
-  max-width: 175px;
-}
-
-.custom-header-container .header-bottom .updates-dropdown-container {
-  float: right;
-  margin-top: 6px;
-}
-
-.custom-header-container .header-bottom .updates-dropdown-container .show-updates-dropdown {
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 9px 17px;
-  border-radius: 4px;
-  font-size: 13px;
-}
-
-.custom-header-container .hero {
-  background-image: url("https://752f77aa107738c25d93-f083e9a6295a3f0714fa019ffdca65c3.ssl.cf1.rackcdn.com/hero-images/hero-1_2-2015_cropped.jpg");
-  background-size: cover;
-  background-position: center 40%;
-  color: #fff;
-  text-shadow: 0 0 3px rgba(0, 0, 0, 0.75);
-  text-align: center;
-  padding: 100px 0;
-  position: relative;
-}
-
-.custom-header-container .hero .overlay {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  background-color: rgba(0, 0, 0, 0.3);
-  z-index: 10;
-}
-
-.custom-header-container .hero .text {
-  position: relative;
-  z-index: 11;
-}
-
-.custom-header-container .hero .header {
-  font-size: 50px;
-  line-height: 50px;
-  margin-bottom: 20px;
-}
-
-.custom-header-container .hero .context {
-  line-height: 27px;
-  font-size: 18px;
-  margin: 0 auto;
+.layout-content.status.status-index .unresolved-incident.impact-major .updates {
+  border-color: #c40022;
 }
 
 .custom-footer-container {

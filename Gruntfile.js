@@ -6,6 +6,16 @@ module.exports = function (grunt) {
     }
 
     grunt.initConfig({
+        browserify: {
+            dev: {
+                files: {
+                    'src/js/main.min.js': ['src/js/main.js']
+                },
+                options: {
+                    transform: ['browserify-compile-templates']
+                }
+            }
+        },
         concurrent: {
             dev: {
                 tasks: ['connect:dev', 'watch:html', 'watch:sass'],
@@ -82,8 +92,8 @@ module.exports = function (grunt) {
         },
         watch: {
             html: {
-                files: ['src/html/**/*', 'src/js/**/*'],
-                tasks: ['processhtml:dev']
+                files: ['src/html/**/*', 'src/js/**/*', '!src/js/main.min.js'],
+                tasks: ['browserify:dev', 'processhtml:dev']
             },
             sass: {
                 files: ['src/scss/**/*'],
@@ -92,6 +102,7 @@ module.exports = function (grunt) {
         }
     });
 
+    grunt.loadNpmTasks('grunt-browserify');
     grunt.loadNpmTasks('grunt-concurrent');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-watch');

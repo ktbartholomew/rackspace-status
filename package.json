@@ -18,16 +18,19 @@
   },
   "homepage": "https://github.com/ktbartholomew/rackspace-status",
   "dependencies": {
-    "grunt": "^0.4.5",
-    "grunt-sass": "^1.0.0"
   },
   "devDependencies": {
+    "backbone": "^1.2.0",
+    "browserify-compile-templates": "^0.2.0",
     "grunt": "^0.4.5",
+    "grunt-browserify": "^3.8.0",
     "grunt-concurrent": "^1.0.0",
     "grunt-contrib-connect": "^0.10.1",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-processhtml": "^0.3.7",
     "grunt-sass": "^1.0.0",
-    "request": "^2.55.0"
+    "jquery": "^2.1.4",
+    "request": "^2.55.0",
+    "underscore": "^1.8.3"
   }
 }

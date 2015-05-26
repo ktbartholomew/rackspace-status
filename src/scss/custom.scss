@@ -3,7 +3,9 @@
 @import "mixins";
 @import "fonts";
 
+@import "components/incidents";
 @import "components/statuses";
+@import "components/lights";
 
 @import "modules/banner";
 @import "modules/ceiling";
@@ -14,84 +16,23 @@ body {
 }
 
 body * {
-  -webkit-font-antialiasing: antialiased;
+  -webkit-font-smoothing: antialiased;
 }
 
 .container {
   max-width: 960px;
 }
 
-.custom-header-container {
-  .header-top {
-    font-size:10px;
-    padding:5px 0;
-    color:#777;
-    strong {
-      color:#333; 
-    }
-    span:first-child {
-      display:inline-block;
-      margin-right:10px;
-      padding-right:10px;
-      border-right:1px solid #666;
-    }
-  }
-  .header-bottom {
-    background-color:#333;
-    padding:15px 0;
-    img {
-      max-width:175px;
-    }
-    .updates-dropdown-container {
-      float:right;
-      margin-top:6px;
-      .show-updates-dropdown {
-        color:#fff;
-        border:1px solid rgba(255,255,255,.3);
-            padding: 9px 17px;
-        border-radius:4px;
-        font-size:13px;
-      }
-    }
-  }
-  .hero {
-            background-image:url('https://752f77aa107738c25d93-f083e9a6295a3f0714fa019ffdca65c3.ssl.cf1.rackcdn.com/hero-images/hero-1_2-2015_cropped.jpg');
-    background-size:cover;
-    background-position:center 40%;
-    color:#fff;
-    text-shadow:0 0 3px rgba(0,0,0,.75);
-    text-align:center;
-    padding:100px 0;
-    position:relative;
-    .overlay {
-      position:absolute;
-      top:0px;
-      left:0px;
-      right:0px;
-      bottom:0px;
-      background-color:rgba(0,0,0,.3);
-      z-index:10;
-    }
-    .text {
-      position:relative;
-      z-index:11;
-    }
-    .header {
-      font-size:50px;
-      line-height:50px;
-      margin-bottom:20px;
-    }
-    .context {
-      line-height:27px;
-      font-size:18px;
-      margin:0 auto;
-    }
-  }
+.layout-content.status.status-index .status-day .update-title.impact-major a, .layout-content.status.status-index .status-day .update-title.impact-major a:hover, .layout-content.status.status-index .page-status.status-major, .layout-content.status.status-index .unresolved-incident.impact-major .incident-title {
+  background-color: $rax-red;
 }
 
+.layout-content.status.status-index .unresolved-incident.impact-major .updates {
+  border-color: $rax-red;
+}
 
 .custom-footer-container {
-  background:#1a1a1a; 
+  background:#1a1a1a;
   padding:30px 0;
   .header {
     color:#888;
