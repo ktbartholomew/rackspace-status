@@ -8,10 +8,22 @@
   }
 }
 
+.layout-content.status.status-index .status-day .update-title.impact-major a, .layout-content.status.status-index .status-day .update-title.impact-major a:hover, .layout-content.status.status-index .page-status.status-major, .layout-content.status.status-index .unresolved-incident.impact-major .incident-title {
+  background-color: $rax-red;
+}
+
+.layout-content.status.status-index .unresolved-incident.impact-major .updates {
+  border-color: $rax-red;
+}
+
+.status-day.no-incidents {
+    display: none;
+}
+
 .unresolved-incidents {
-  h4 {
+    h4 {
     margin-bottom: 1em;
-  }
+    }
 }
 
 .unresolved-incident {

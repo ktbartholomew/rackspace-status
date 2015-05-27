@@ -1,0 +1,42 @@
+#loading-message {
+    background: $white;
+    color: tint($black, 10%);
+    font-size: 36px;
+    height: calc(100vh - 104px);
+    padding: calc(40vh - 48px) 0;
+    position: fixed;
+    text-align: center;
+    top: 104px;
+    width: 100vw;
+
+    .ld-1, .ld-2, .ld-3 {
+        @include animation(fade 2s ease-in-out infinite);
+    }
+
+    .ld-2 {
+        @include animation-delay(0.3s);
+    }
+
+    .ld-3 {
+        @include animation-delay(0.6s);
+    }
+
+    &.fade-out {
+        opacity: 0;
+        @include transition(opacity 0.3s ease-in);
+    }
+}
+
+@include keyframes('fade') {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

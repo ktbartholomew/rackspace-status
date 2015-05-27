@@ -1,0 +1,16 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+body * {
+    -webkit-font-smoothing: antialiased;
+}
+
+.status-index .container {
+    display: none;
+    max-width: 960px;
+
+    &.show {
+        display: block;
+    }
+}

@@ -1,7 +1,7 @@
 @function tint($color, $percent){
   @return mix(white, $color, $percent);
 }
- 
+
 // Add percentage of black to a color
 @function shade($color, $percent){
   @return mix(black, $color, $percent);
@@ -11,4 +11,16 @@
     margin: 0 auto;
     max-width: $max-width;
     width: 90%;
+}
+
+@mixin column($fraction, $gutter: 0px) {
+    display: inline-block;
+    margin-left: $gutter;
+    margin-right: -0.25em;
+    vertical-align: top;
+    width: 100%;
+
+    @media only screen and (min-width: 700px) {
+        width: calc(#{percentage($fraction)} - #{$gutter});
+    }
 }

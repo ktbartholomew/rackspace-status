@@ -2,48 +2,15 @@
 @import "variables";
 @import "mixins";
 @import "fonts";
+@import "body";
 
+@import "components/buttons";
 @import "components/incidents";
 @import "components/statuses";
 @import "components/lights";
 
 @import "modules/banner";
 @import "modules/ceiling";
+@import "modules/footer";
+@import "modules/loading-message";
 @import "modules/navbar";
-
-body {
-  font-family: 'Open Sans', sans-serif;
-}
-
-body * {
-  -webkit-font-smoothing: antialiased;
-}
-
-.container {
-  max-width: 960px;
-}
-
-.layout-content.status.status-index .status-day .update-title.impact-major a, .layout-content.status.status-index .status-day .update-title.impact-major a:hover, .layout-content.status.status-index .page-status.status-major, .layout-content.status.status-index .unresolved-incident.impact-major .incident-title {
-  background-color: $rax-red;
-}
-
-.layout-content.status.status-index .unresolved-incident.impact-major .updates {
-  border-color: $rax-red;
-}
-
-.custom-footer-container {
-  background:#1a1a1a;
-  padding:30px 0;
-  .header {
-    color:#888;
-    text-transform:uppercase;
-    margin-bottom:10px;
-  }
-  li {
-    margin-bottom:3px;
-  }
-  a {
-    color:#ccc;
-    font-size:14px;
-  }
-}

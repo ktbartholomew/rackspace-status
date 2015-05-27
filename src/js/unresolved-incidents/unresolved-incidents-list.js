@@ -14,9 +14,14 @@ var UnresolvedIncidentsList = Backbone.View.extend({
 
         this.model.fetch().then(function (data) {
           data._ = _;
-            console.log(data.incidents[0]);
             var template = require('./unresolved-incidents-list.html')['unresolved-incidents'];
             UnresolvedIncidentsList.el.innerHTML = template(data);
+            document.querySelector('.status-index .container').classList.add('show');
+            document.querySelector('#loading-message').classList.add('fade-out');
+
+            setTimeout(function () {
+                document.querySelector('#loading-message').remove();
+            }, 300);
         });
 
     }
