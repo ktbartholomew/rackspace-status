@@ -1,5 +1,7 @@
 <script type="text/template" id="unresolved-incidents">
-  <h4>Current Incidents</h4>
+    <% if(obj.incidents.length > 0) { %>
+        <h4>Current Incidents</h4>
+    <% } /* endif */ %>
   <% _(obj.incidents).forEach(function (incident, index, scope) { %>
     <div class="unresolved-incident impact-<%= incident.impact %>">
       <div class="incident-title font-large">
@@ -7,6 +9,7 @@
         <a class="subscribe" data-toggle="modal" href="#subscribe-modal-<%= incident.id %>" id="btn-subscribe-modal-<%= incident.id %>">Subscribe</a>
       </div>
       <div class="incident-details">
+        <% if(incident.components.length > 0) { %>
         <div class="components">
           <h5>Affected Components</h5>
           <div class="list">
@@ -18,17 +21,23 @@
             <% }); %>
           </div>
         </div>
+        <% } /* endif */ %>
+
+        <% if(incident.incident_updates.length > 0) { %>
         <div class="updates font-regular">
           <h5>Updates</h5>
             <div class="list">
               <% _(incident.incident_updates).forEach(function (update, index, scope) { %>
+                <% var rawDate = new Date(update.display_at); %>
+                <% var momentDate = obj.moment(rawDate); %>
                 <div class="update">
                   <strong><%= update.status.charAt(0).toUpperCase() + update.status.substring(1) %></strong> &ndash; <%= update.body %> <br>
-                  <small><%= update.display_at %></small>
+                  <small><%= momentDate.format('MMMM D, hh:mm Z') %></small>
                 </div>
               <% }); %>
             </div>
         </div>
+        <% } /* endif */ %>
       </div>
     </div>
     <div class="modal hide fade modal-open-incident-subscribe" id="subscribe-modal-<%= incident.id %>" style="display: none">

@@ -99,7 +99,7 @@ module.exports = function (grunt) {
         },
         watch: {
             html: {
-                files: ['src/html/**/*', 'src/js/**/*', '!src/js/main.min.js'],
+                files: ['src/html/**/*', 'src/js/**/*', '!src/js/main.build.js', '!src/js/main.min.js'],
                 tasks: ['browserify:dev', 'processhtml:dev']
             },
             sass: {

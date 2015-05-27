@@ -6,4 +6,9 @@ $rax-blue: #1e82d7;
 $status-operational: #5aaa28;
 $status-degraded: #f1c40f;
 $status-minor: #e67e22;
-$status-major: #ff0000;
+$status-major: $rax-red;
+
+$impact-none: shade($white, 50%);
+$impact-minor: $status-degraded;
+$impact-major: $status-minor;
+$impact-critical: $rax-red;

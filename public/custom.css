@@ -287,11 +287,35 @@ body * {
   margin-bottom: 0;
 }
 
-.layout-content.status.status-index .status-day .update-title.impact-major a, .layout-content.status.status-index .status-day .update-title.impact-major a:hover, .layout-content.status.status-index .page-status.status-major, .layout-content.status.status-index .unresolved-incident.impact-major .incident-title {
+.layout-content.status.status-index .unresolved-incidents .unresolved-incident.impact-none .incident-title {
+  background-color: #7f7f7f;
+}
+
+.layout-content.status.status-index .unresolved-incidents .unresolved-incident.impact-none .incident-details {
+  border-color: #7f7f7f;
+}
+
+.layout-content.status.status-index .unresolved-incidents .unresolved-incident.impact-minor .incident-title {
+  background-color: #f1c40f;
+}
+
+.layout-content.status.status-index .unresolved-incidents .unresolved-incident.impact-minor .incident-details {
+  border-color: #f1c40f;
+}
+
+.layout-content.status.status-index .unresolved-incidents .unresolved-incident.impact-major .incident-title {
+  background-color: #e67e22;
+}
+
+.layout-content.status.status-index .unresolved-incidents .unresolved-incident.impact-major .incident-details {
+  border-color: #e67e22;
+}
+
+.layout-content.status.status-index .unresolved-incidents .unresolved-incident.impact-critical .incident-title {
   background-color: #c40022;
 }
 
-.layout-content.status.status-index .unresolved-incident.impact-major .updates {
+.layout-content.status.status-index .unresolved-incidents .unresolved-incident.impact-critical .incident-details {
   border-color: #c40022;
 }
 
@@ -337,14 +361,6 @@ body * {
   border-bottom: solid 1px #e5e5e5;
 }
 
-.unresolved-incident.impact-major .incident-details {
-  border-color: #c40022;
-}
-
-.unresolved-incident.impact-minor .incident-details {
-  border-color: #f1c40f;
-}
-
 .layout-content.status.status-index .components-section .component-container .component-status {
   float: none;
 }
@@ -357,22 +373,65 @@ body * {
   display: inline-block;
 }
 
+.component-status {
+  background: #e5e5e5;
+  border-radius: 6px;
+  display: inline-block;
+  height: 12px;
+  margin-right: 0.25em;
+  overflow: hidden;
+  text-indent: -9999px;
+  width: 12px;
+}
+
 .status-green .component-status {
+  background: #e5e5e5;
+  border-radius: 6px;
+  display: inline-block;
+  height: 12px;
+  margin-right: 0.25em;
+  overflow: hidden;
+  text-indent: -9999px;
+  width: 12px;
   background-image: radial-gradient(#8bc368, #5aaa28);
   box-shadow: 0px 0px 4px #6ab23d;
 }
 
 .status-yellow .component-status {
+  background: #e5e5e5;
+  border-radius: 6px;
+  display: inline-block;
+  height: 12px;
+  margin-right: 0.25em;
+  overflow: hidden;
+  text-indent: -9999px;
+  width: 12px;
   background-image: radial-gradient(#f5d557, #f1c40f);
   box-shadow: 0px 0px 4px #f2c926;
 }
 
 .status-orange .component-status {
+  background: #e5e5e5;
+  border-radius: 6px;
+  display: inline-block;
+  height: 12px;
+  margin-right: 0.25em;
+  overflow: hidden;
+  text-indent: -9999px;
+  width: 12px;
   background-image: radial-gradient(#eda464, #e67e22);
   box-shadow: 0px 0px 4px #e88a38;
 }
 
 .status-red .component-status {
+  background: #e5e5e5;
+  border-radius: 6px;
+  display: inline-block;
+  height: 12px;
+  margin-right: 0.25em;
+  overflow: hidden;
+  text-indent: -9999px;
+  width: 12px;
   background-image: radial-gradient(#d54c64, #c40022);
   box-shadow: 0px 0px 4px #c91938;
 }
@@ -389,21 +448,53 @@ body * {
 }
 
 .light.major_outage, .component-status.major_outage {
+  background: #e5e5e5;
+  border-radius: 6px;
+  display: inline-block;
+  height: 12px;
+  margin-right: 0.25em;
+  overflow: hidden;
+  text-indent: -9999px;
+  width: 12px;
   background-image: radial-gradient(#d54c64, #c40022);
   box-shadow: 0px 0px 4px #c91938;
 }
 
 .light.partial_outage, .component-status.partial_outage {
+  background: #e5e5e5;
+  border-radius: 6px;
+  display: inline-block;
+  height: 12px;
+  margin-right: 0.25em;
+  overflow: hidden;
+  text-indent: -9999px;
+  width: 12px;
   background-image: radial-gradient(#eda464, #e67e22);
   box-shadow: 0px 0px 4px #e88a38;
 }
 
 .light.degraded_performance, .component-status.degraded_performance {
+  background: #e5e5e5;
+  border-radius: 6px;
+  display: inline-block;
+  height: 12px;
+  margin-right: 0.25em;
+  overflow: hidden;
+  text-indent: -9999px;
+  width: 12px;
   background-image: radial-gradient(#f5d557, #f1c40f);
   box-shadow: 0px 0px 4px #f2c926;
 }
 
 .light.operational, .component-status.operational {
+  background: #e5e5e5;
+  border-radius: 6px;
+  display: inline-block;
+  height: 12px;
+  margin-right: 0.25em;
+  overflow: hidden;
+  text-indent: -9999px;
+  width: 12px;
   background-image: radial-gradient(#8bc368, #5aaa28);
   box-shadow: 0px 0px 4px #6ab23d;
 }
@@ -496,6 +587,10 @@ body * {
   color: #1e82d7;
 }
 
+.layout-content.status.status-index .components-section {
+  display: none;
+}
+
 #custom-footer {
   background: #191919;
   padding: 30px 0;
@@ -557,6 +652,67 @@ body * {
 
 #custom-footer a:hover, #custom-footer a:focus, #custom-footer a:active {
   color: white;
+}
+
+.layout-content.status.status-index .incidents-list .incident-title.impact-none > a, .layout-content.status.status-index .incidents-list .incident-title.impact-minor > a, .layout-content.status.status-index .incidents-list .incident-title.impact-major > a, .layout-content.status.status-index .incidents-list .incident-title.impact-critical > a {
+  color: #191919;
+  padding-left: 10px;
+}
+
+.layout-content.status.status-index .incidents-list .incident-title > a:before {
+  content: '';
+  left: -5px;
+  position: relative;
+}
+
+.layout-content.status.status-index .incidents-list .incident-title.impact-none > a:before {
+  background: #e5e5e5;
+  border-radius: 6px;
+  display: inline-block;
+  height: 12px;
+  margin-right: 0.25em;
+  overflow: hidden;
+  text-indent: -9999px;
+  width: 12px;
+}
+
+.layout-content.status.status-index .incidents-list .incident-title.impact-minor > a:before {
+  background: #e5e5e5;
+  border-radius: 6px;
+  display: inline-block;
+  height: 12px;
+  margin-right: 0.25em;
+  overflow: hidden;
+  text-indent: -9999px;
+  width: 12px;
+  background-image: radial-gradient(#f5d557, #f1c40f);
+  box-shadow: 0px 0px 4px #f2c926;
+}
+
+.layout-content.status.status-index .incidents-list .incident-title.impact-major > a:before {
+  background: #e5e5e5;
+  border-radius: 6px;
+  display: inline-block;
+  height: 12px;
+  margin-right: 0.25em;
+  overflow: hidden;
+  text-indent: -9999px;
+  width: 12px;
+  background-image: radial-gradient(#eda464, #e67e22);
+  box-shadow: 0px 0px 4px #e88a38;
+}
+
+.layout-content.status.status-index .incidents-list .incident-title.impact-critical > a:before {
+  background: #e5e5e5;
+  border-radius: 6px;
+  display: inline-block;
+  height: 12px;
+  margin-right: 0.25em;
+  overflow: hidden;
+  text-indent: -9999px;
+  width: 12px;
+  background-image: radial-gradient(#d54c64, #c40022);
+  box-shadow: 0px 0px 4px #c91938;
 }
 
 #loading-message {

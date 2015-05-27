@@ -13,6 +13,56 @@
     width: 90%;
 }
 
+@mixin background-operational () {
+    background: $status-operational;
+    color: $white;
+}
+
+@mixin background-degraded () {
+    background: $status-degraded;
+}
+
+@mixin background-minor () {
+    background: $status-minor;
+    color: $white;
+}
+
+@mixin background-major () {
+    background: $rax-red;
+    color: $white;
+}
+
+@mixin status-light($severity: "") {
+    background: shade($white, 10%);
+    border-radius: 6px;
+    display: inline-block;
+    height: 12px;
+    margin-right: 0.25em;
+    overflow: hidden;
+    text-indent: -9999px;
+    width: 12px;
+
+    @if $severity == "operational" {
+        background-image: radial-gradient(tint($status-operational, 30%), $status-operational);
+        box-shadow: 0px 0px 4px tint($status-operational, 10%);
+    }
+
+    @if $severity == "degraded" {
+        background-image: radial-gradient(tint($status-degraded, 30%), $status-degraded);
+        box-shadow: 0px 0px 4px tint($status-degraded, 10%);
+    }
+
+    @if $severity == "minor" {
+        background-image: radial-gradient(tint($status-minor, 30%), $status-minor);
+        box-shadow: 0px 0px 4px tint($status-minor, 10%);
+    }
+
+    @if $severity == "major" {
+        background-image: radial-gradient(tint($rax-red, 30%), $rax-red);
+        box-shadow: 0px 0px 4px tint($rax-red, 10%);
+    }
+}
+
 @mixin column($fraction, $gutter: 0px) {
     display: inline-block;
     margin-left: $gutter;

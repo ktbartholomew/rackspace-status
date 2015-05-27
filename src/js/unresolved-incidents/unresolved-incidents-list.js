@@ -1,5 +1,6 @@
 var Backbone = require('backbone'),
     _ = require('underscore'),
+    moment = require('moment'),
     UnresolvedIncidentModel = require('./unresolved-incidents-model');
 
 var UnresolvedIncidentsList = Backbone.View.extend({
@@ -14,6 +15,7 @@ var UnresolvedIncidentsList = Backbone.View.extend({
 
         this.model.fetch().then(function (data) {
           data._ = _;
+          data.moment = moment;
             var template = require('./unresolved-incidents-list.html')['unresolved-incidents'];
             UnresolvedIncidentsList.el.innerHTML = template(data);
             document.querySelector('.status-index .container').classList.add('show');

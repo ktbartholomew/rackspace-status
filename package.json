@@ -30,6 +30,7 @@
     "grunt-processhtml": "^0.3.7",
     "grunt-sass": "^1.0.0",
     "jquery": "^2.1.4",
+    "moment": "^2.10.3",
     "request": "^2.55.0",
     "underscore": "^1.8.3"
   }

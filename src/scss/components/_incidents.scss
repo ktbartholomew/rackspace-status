@@ -8,12 +8,40 @@
   }
 }
 
-.layout-content.status.status-index .status-day .update-title.impact-major a, .layout-content.status.status-index .status-day .update-title.impact-major a:hover, .layout-content.status.status-index .page-status.status-major, .layout-content.status.status-index .unresolved-incident.impact-major .incident-title {
-  background-color: $rax-red;
-}
+.layout-content.status.status-index .unresolved-incidents {
+    .unresolved-incident.impact-none {
+        .incident-title {
+             background-color: $impact-none;
+        }
+        .incident-details {
+            border-color: $impact-none;
+        }
+    }
 
-.layout-content.status.status-index .unresolved-incident.impact-major .updates {
-  border-color: $rax-red;
+    .unresolved-incident.impact-minor {
+        .incident-title {
+             background-color: $impact-minor;
+        }
+        .incident-details {
+            border-color: $impact-minor;
+        }
+    }
+    .unresolved-incident.impact-major {
+        .incident-title {
+             background-color: $impact-major;
+        }
+        .incident-details {
+            border-color: $impact-major;
+        }
+    }
+    .unresolved-incident.impact-critical {
+        .incident-title {
+             background-color: $impact-critical;
+        }
+        .incident-details {
+            border-color: $impact-critical;
+        }
+    }
 }
 
 .status-day.no-incidents {
@@ -61,13 +89,5 @@
         }
       }
     }
-  }
-
-  &.impact-major .incident-details {
-    border-color: $rax-red;
-  }
-
-  &.impact-minor .incident-details {
-    border-color: $status-degraded;
   }
 }
