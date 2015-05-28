@@ -1,0 +1,71 @@
+.layout-content.status.status-incident > .container {
+  @include incident-card();
+  @include centered-container(960px);
+  margin-top: 80px;
+  margin-bottom: 80px;
+
+  .page-title {
+    margin-bottom: 0;
+  }
+
+  .incident-name {
+    padding: 0.75rem 1.25rem;
+
+    &.impact-none {
+      background: $impact-none;
+      color: $white;
+    }
+
+    &.impact-minor {
+      background: $impact-minor;
+      color: $rax-text;
+    }
+
+    &.impact-major {
+      background: $impact-major;
+      color: $white;
+    }
+
+    &.impact-critical {
+      background: $impact-critical;
+      color: $white;
+    }
+  }
+
+  .subheader {
+    display: none;
+  }
+
+  hr {
+    display: none;
+  }
+
+  .update-row {
+    border-bottom: solid 1px shade($white, 10%);
+    margin-bottom: 0;
+    padding: 1.5rem 1.25rem;
+  }
+
+  .update-title {
+    color: tint($black, 67%);
+    float: none;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .update-container {
+    width: 95.5%;
+  }
+
+  .components-affected {
+    border: none;
+    padding: 1.5rem 1.25rem;
+  }
+
+  .page-footer {
+    background: shade($white, 5%);
+    margin-top: 0;
+    padding: 0.75rem 1.25rem
+  }
+}

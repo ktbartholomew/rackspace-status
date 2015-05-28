@@ -5,7 +5,10 @@
 @import "body";
 
 @import "components/buttons";
-@import "components/incidents";
+@import "components/incidents/history";
+@import "components/incidents/list";
+@import "components/incidents/single";
+@import "components/incidents/unresolved";
 @import "components/scheduled-maintenance";
 @import "components/statuses";
 @import "components/lights";

@@ -1,0 +1,83 @@
+.layout-content.status.status-index .unresolved-incidents {
+    h4 {
+      margin-bottom: 1em;
+    }
+    .unresolved-incident {
+      @include incident-card;
+
+      .incident-details {
+        border: none;
+
+        .components, .updates {
+          h5 {
+            background: shade($white, 10%);
+            font-size: 0.8rem;
+            margin: 0;
+            padding: 0 1.25rem;
+            text-transform: uppercase;
+          }
+
+          .list {
+            padding: 1.25rem;
+          }
+        }
+
+        .updates {
+          border: none;
+          border-width: 0px;
+          padding: 0;
+
+          .list {
+            padding: 0;
+
+            .update {
+              margin: 0;
+              padding: 20px 1.25rem;
+
+              &:not(:last-child) {
+                border-bottom: solid 1px shade($white, 10%);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .unresolved-incident.impact-none {
+        .incident-title {
+             background-color: $impact-none;
+        }
+        .incident-details {
+            border-color: $impact-none;
+        }
+    }
+
+    .unresolved-incident.impact-minor {
+        .incident-title {
+             background-color: $impact-minor;
+
+             a {
+               color: $rax-text;
+             }
+        }
+        .incident-details {
+            border: none;
+        }
+    }
+    .unresolved-incident.impact-major {
+        .incident-title {
+             background-color: $impact-major;
+        }
+        .incident-details {
+            border-color: $impact-major;
+        }
+    }
+    .unresolved-incident.impact-critical {
+        .incident-title {
+             background-color: $impact-critical;
+        }
+        .incident-details {
+            border-color: $impact-critical;
+        }
+    }
+}

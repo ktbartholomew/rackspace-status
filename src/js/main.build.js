@@ -15761,6 +15761,7 @@ new UnresolvedIncidentsList({
 }).render();
 
 
+$('.powered-by').appendTo('#vendor-credit');
 
 $('.component-inner-container').each(function () {
   $(this).find('.group-parent-indicator').remove();

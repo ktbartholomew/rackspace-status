@@ -267,6 +267,10 @@ body * {
   display: block;
 }
 
+.status-index .page-status {
+  display: none;
+}
+
 .container {
   margin: 0 auto;
   max-width: 960px;
@@ -284,97 +288,52 @@ body * {
   box-shadow: none;
 }
 
-.layout-content.status.status-index .unresolved-incidents .unresolved-incident .updates {
-  border-width: 0px;
-  padding: 0;
+.layout-content.status.status-full-history .months-container .month .month-title {
+  border: none;
+  color: #666666;
+  margin-bottom: 1.5rem;
+  padding: 0.75rem 0;
 }
 
-.layout-content.status.status-index .unresolved-incidents .unresolved-incident .updates .update {
-  margin-bottom: 0;
-}
-
-.layout-content.status.status-index .unresolved-incidents .unresolved-incident {
+.layout-content.status.status-full-history .months-container .month .incident-container {
   border: solid 1px #d8d8d8;
   border-radius: 4px;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.12);
   overflow: hidden;
+  margin-bottom: 3rem;
 }
 
-.layout-content.status.status-index .unresolved-incidents .unresolved-incident.impact-none .incident-title {
-  background-color: #7f7f7f;
+.layout-content.status.status-full-history .months-container .month .incident-container .incident-title {
+  display: block;
+  padding: 0.75rem 1.25rem;
 }
 
-.layout-content.status.status-index .unresolved-incidents .unresolved-incident.impact-none .incident-details {
-  border-color: #7f7f7f;
+.layout-content.status.status-full-history .months-container .month .incident-container .incident-title.impact-none {
+  background: #7f7f7f;
+  color: white;
 }
 
-.layout-content.status.status-index .unresolved-incidents .unresolved-incident.impact-minor .incident-title {
-  background-color: #f1c40f;
+.layout-content.status.status-full-history .months-container .month .incident-container .incident-title.impact-minor {
+  background: #f1c40f;
+  color: black;
 }
 
-.layout-content.status.status-index .unresolved-incidents .unresolved-incident.impact-minor .incident-title a {
-  color: #191919;
+.layout-content.status.status-full-history .months-container .month .incident-container .incident-title.impact-major {
+  background: #e67e22;
+  color: white;
 }
 
-.layout-content.status.status-index .unresolved-incidents .unresolved-incident.impact-minor .incident-details {
-  border: none;
+.layout-content.status.status-full-history .months-container .month .incident-container .incident-title.impact-critical {
+  background: #c40022;
+  color: white;
 }
 
-.layout-content.status.status-index .unresolved-incidents .unresolved-incident.impact-major .incident-title {
-  background-color: #e67e22;
+.layout-content.status.status-full-history .months-container .month .incident-container > div {
+  padding: 0.75rem 1.25rem;
 }
 
-.layout-content.status.status-index .unresolved-incidents .unresolved-incident.impact-major .incident-details {
-  border-color: #e67e22;
-}
-
-.layout-content.status.status-index .unresolved-incidents .unresolved-incident.impact-critical .incident-title {
-  background-color: #c40022;
-}
-
-.layout-content.status.status-index .unresolved-incidents .unresolved-incident.impact-critical .incident-details {
-  border-color: #c40022;
-}
-
-.status-day.no-incidents {
+.layout-content.status.status-index .incidents-list .status-day.no-incidents {
   display: none;
-}
-
-.unresolved-incidents h4 {
-  margin-bottom: 1em;
-}
-
-.unresolved-incident .incident-details {
-  border: none;
-}
-
-.unresolved-incident .incident-details .components h5, .unresolved-incident .incident-details .updates h5 {
-  background: #e5e5e5;
-  font-size: 0.8rem;
-  margin: 0;
-  padding: 0 1.25rem;
-  text-transform: uppercase;
-}
-
-.unresolved-incident .incident-details .components .list, .unresolved-incident .incident-details .updates .list {
-  padding: 1.25rem;
-}
-
-.unresolved-incident .incident-details .updates {
-  border: none;
-}
-
-.unresolved-incident .incident-details .updates .list {
-  padding: 0;
-}
-
-.unresolved-incident .incident-details .updates .list .update {
-  margin: 0;
-  padding: 20px 1.25rem;
-}
-
-.unresolved-incident .incident-details .updates .list .update:not(:last-child) {
-  border-bottom: solid 1px #e5e5e5;
 }
 
 .layout-content.status.status-index .incidents-list .incident-container {
@@ -383,6 +342,11 @@ body * {
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.12);
   overflow: hidden;
   margin-bottom: 3rem;
+}
+
+.layout-content.status.status-index .incidents-list .incident-container p {
+  margin: 0;
+  padding: 1.25rem;
 }
 
 .layout-content.status.status-index .incidents-list .incident-title {
@@ -527,6 +491,88 @@ body * {
   background: #f2f2f2;
   margin-top: 0;
   padding: 0.75rem 1.25rem;
+}
+
+.layout-content.status.status-index .unresolved-incidents h4 {
+  margin-bottom: 1em;
+}
+
+.layout-content.status.status-index .unresolved-incidents .unresolved-incident {
+  border: solid 1px #d8d8d8;
+  border-radius: 4px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+}
+
+.layout-content.status.status-index .unresolved-incidents .unresolved-incident .incident-details {
+  border: none;
+}
+
+.layout-content.status.status-index .unresolved-incidents .unresolved-incident .incident-details .components h5, .layout-content.status.status-index .unresolved-incidents .unresolved-incident .incident-details .updates h5 {
+  background: #e5e5e5;
+  font-size: 0.8rem;
+  margin: 0;
+  padding: 0 1.25rem;
+  text-transform: uppercase;
+}
+
+.layout-content.status.status-index .unresolved-incidents .unresolved-incident .incident-details .components .list, .layout-content.status.status-index .unresolved-incidents .unresolved-incident .incident-details .updates .list {
+  padding: 1.25rem;
+}
+
+.layout-content.status.status-index .unresolved-incidents .unresolved-incident .incident-details .updates {
+  border: none;
+  border-width: 0px;
+  padding: 0;
+}
+
+.layout-content.status.status-index .unresolved-incidents .unresolved-incident .incident-details .updates .list {
+  padding: 0;
+}
+
+.layout-content.status.status-index .unresolved-incidents .unresolved-incident .incident-details .updates .list .update {
+  margin: 0;
+  padding: 20px 1.25rem;
+}
+
+.layout-content.status.status-index .unresolved-incidents .unresolved-incident .incident-details .updates .list .update:not(:last-child) {
+  border-bottom: solid 1px #e5e5e5;
+}
+
+.layout-content.status.status-index .unresolved-incidents .unresolved-incident.impact-none .incident-title {
+  background-color: #7f7f7f;
+}
+
+.layout-content.status.status-index .unresolved-incidents .unresolved-incident.impact-none .incident-details {
+  border-color: #7f7f7f;
+}
+
+.layout-content.status.status-index .unresolved-incidents .unresolved-incident.impact-minor .incident-title {
+  background-color: #f1c40f;
+}
+
+.layout-content.status.status-index .unresolved-incidents .unresolved-incident.impact-minor .incident-title a {
+  color: #191919;
+}
+
+.layout-content.status.status-index .unresolved-incidents .unresolved-incident.impact-minor .incident-details {
+  border: none;
+}
+
+.layout-content.status.status-index .unresolved-incidents .unresolved-incident.impact-major .incident-title {
+  background-color: #e67e22;
+}
+
+.layout-content.status.status-index .unresolved-incidents .unresolved-incident.impact-major .incident-details {
+  border-color: #e67e22;
+}
+
+.layout-content.status.status-index .unresolved-incidents .unresolved-incident.impact-critical .incident-title {
+  background-color: #c40022;
+}
+
+.layout-content.status.status-index .unresolved-incidents .unresolved-incident.impact-critical .incident-details {
+  border-color: #c40022;
 }
 
 .layout-content.status.status-index .scheduled-maintenances-container .scheduled-maintenance {
@@ -846,6 +892,27 @@ body * {
 }
 
 #custom-footer a:hover, #custom-footer a:focus, #custom-footer a:active {
+  color: white;
+}
+
+#custom-footer .copyright {
+  margin-top: 20px;
+}
+
+#custom-footer .copyright, #custom-footer #vendor-credit {
+  color: white;
+  font-size: 12px;
+}
+
+#custom-footer .copyright .color-secondary, #custom-footer #vendor-credit .color-secondary {
+  color: #cccccc;
+}
+
+#custom-footer .copyright a, #custom-footer #vendor-credit a {
+  color: #cccccc;
+}
+
+#custom-footer .copyright a:hover, #custom-footer .copyright a:focus, #custom-footer .copyright a:active, #custom-footer #vendor-credit a:hover, #custom-footer #vendor-credit a:focus, #custom-footer #vendor-credit a:active {
   color: white;
 }
 

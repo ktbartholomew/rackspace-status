@@ -35,4 +35,25 @@
             color: $white;
         }
     }
+
+    .copyright {
+      margin-top: 20px;
+    }
+
+    .copyright, #vendor-credit {
+      color: $white;
+      font-size: 12px;
+
+      .color-secondary {
+        color: shade($white, 20%);
+      }
+
+      a {
+        color: shade($white, 20%);
+
+        &:hover, &:focus, &:active {
+            color: $white;
+        }
+      }
+    }
 }

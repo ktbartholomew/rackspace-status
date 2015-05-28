@@ -1,0 +1,84 @@
+.layout-content.status.status-index .incidents-list {
+    $impact-none-faded: tint($impact-none, 0%);
+    $impact-minor-faded: tint($impact-minor, 0%);
+    $impact-major-faded: tint($impact-major, 0%);
+    $impact-critical-faded: tint($impact-critical, 0%);
+
+    .status-day.no-incidents {
+        display: none;
+    }
+
+    .incident-container {
+      @include incident-card();
+      margin-bottom: 3rem;
+
+      p {
+        margin: 0;
+        padding: 1.25rem;
+      }
+    }
+
+    .incident-title {
+        padding: 0.75rem 1.25rem;
+
+        &.impact-none {
+          background: $impact-none-faded;
+
+          a {
+            color: $white;
+          }
+
+          & + .updates-container {
+            border: none;
+          }
+        }
+        &.impact-minor {
+          background: $impact-minor-faded;
+
+          a {
+            color: tint($black, 10%);
+          }
+
+          & + .updates-container {
+            border: none;
+          }
+        }
+        &.impact-major {
+          background: $impact-major-faded;
+
+          a {
+            color: $white;
+          }
+
+          & + .updates-container {
+            border: none;
+          }
+        }
+        &.impact-critical {
+          background: $impact-critical-faded;
+
+          a {
+            color: $white;
+          }
+
+          & + .updates-container {
+            border: none;
+          }
+        }
+    }
+
+    .updates-container {
+      border-style: solid;
+      border-width: 1px;
+      border-top-width: 0;
+
+      .update {
+        margin: 0;
+        padding: 1.25rem;
+
+        &:not(:last-child) {
+          border-bottom: solid 1px shade($white, 10%);
+        }
+      }
+    }
+}

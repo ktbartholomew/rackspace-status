@@ -15,6 +15,10 @@ body * {
     }
 }
 
+.status-index .page-status {
+  display: none;
+}
+
 
 .container {
   @include centered-container(960px);
