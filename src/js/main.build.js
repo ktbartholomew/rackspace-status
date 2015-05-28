@@ -15747,18 +15747,42 @@ return jQuery;
 },{}],5:[function(require,module,exports){
 arguments[4][2][0].apply(exports,arguments)
 },{"dup":2}],6:[function(require,module,exports){
+var Backbone = require('backbone');
+
+var CurrentYear = Backbone.View.extend({
+  render: function () {
+    var d = new Date();
+    this.el.textContent = d.getFullYear();
+  }
+});
+
+module.exports = CurrentYear;
+
+},{"backbone":1}],7:[function(require,module,exports){
 document.body.id = 'rax-status-page';
 
 var StatusBannerView = require('./status/status-banner');
 var UnresolvedIncidentsList = require('./unresolved-incidents/unresolved-incidents-list');
+var CurrentYear = require('./current-year');
 
-new StatusBannerView({
-  el: document.querySelector('.layout-content.status-index #rax-banner')
-}).render();
+if(document.querySelector('.layout-content.status-index #rax-banner')) {
+  new StatusBannerView({
+    el: document.querySelector('.layout-content.status-index #rax-banner')
+  }).render();
+}
 
-new UnresolvedIncidentsList({
-  el: document.querySelector('.layout-content.status-index .unresolved-incidents')
-}).render();
+if(document.querySelector('.layout-content.status-index .unresolved-incidents')) {
+  new UnresolvedIncidentsList({
+    el: document.querySelector('.layout-content.status-index .unresolved-incidents')
+  }).render();
+}
+
+if(document.querySelector('.current-year')) {
+  new CurrentYear({
+    el: document.querySelector('.current-year')
+  }).render();
+}
+
 
 
 $('.powered-by').appendTo('#vendor-credit');
@@ -15768,7 +15792,7 @@ $('.component-inner-container').each(function () {
   $(this).find('.component-status').prependTo($(this).find('.name'));
 });
 
-},{"./status/status-banner":8,"./unresolved-incidents/unresolved-incidents-list":11}],7:[function(require,module,exports){
+},{"./current-year":6,"./status/status-banner":9,"./unresolved-incidents/unresolved-incidents-list":12}],8:[function(require,module,exports){
 _ = require('underscore');
 module.exports = {
     "status-banner-template": function(obj){
@@ -15785,7 +15809,7 @@ __p+='\n';
 return __p;
 }
 };
-},{"underscore":5}],8:[function(require,module,exports){
+},{"underscore":5}],9:[function(require,module,exports){
 var Backbone = require('backbone'),
     StatusModel = require('./status-model');
 
@@ -15811,7 +15835,7 @@ var StatusBanner = Backbone.View.extend({
 
 module.exports = StatusBanner;
 
-},{"./status-banner.html":7,"./status-model":9,"backbone":1}],9:[function(require,module,exports){
+},{"./status-banner.html":8,"./status-model":10,"backbone":1}],10:[function(require,module,exports){
 var Backbone = require('backbone');
 
 var StatusModel = Backbone.Model.extend({
@@ -15821,7 +15845,7 @@ var StatusModel = Backbone.Model.extend({
 });
 
 module.exports = StatusModel;
-},{"backbone":1}],10:[function(require,module,exports){
+},{"backbone":1}],11:[function(require,module,exports){
 _ = require('underscore');
 module.exports = {
     "unresolved-incidents": function(obj){
@@ -15894,7 +15918,7 @@ __p+='\n';
 return __p;
 }
 };
-},{"underscore":5}],11:[function(require,module,exports){
+},{"underscore":5}],12:[function(require,module,exports){
 var Backbone = require('backbone'),
     _ = require('underscore'),
     moment = require('moment'),
@@ -15915,6 +15939,7 @@ var UnresolvedIncidentsList = Backbone.View.extend({
           data.moment = moment;
             var template = require('./unresolved-incidents-list.html')['unresolved-incidents'];
             UnresolvedIncidentsList.el.innerHTML = template(data);
+
             document.querySelector('.status-index .container').classList.add('show');
             document.querySelector('#loading-message').classList.add('fade-out');
 
@@ -15928,7 +15953,7 @@ var UnresolvedIncidentsList = Backbone.View.extend({
 
 module.exports = UnresolvedIncidentsList;
 
-},{"./unresolved-incidents-list.html":10,"./unresolved-incidents-model":12,"backbone":1,"moment":4,"underscore":5}],12:[function(require,module,exports){
+},{"./unresolved-incidents-list.html":11,"./unresolved-incidents-model":13,"backbone":1,"moment":4,"underscore":5}],13:[function(require,module,exports){
 var Backbone = require('backbone');
 
 var UnresolvedIncidentModel = Backbone.Model.extend({
@@ -15939,4 +15964,4 @@ var UnresolvedIncidentModel = Backbone.Model.extend({
 
 module.exports = UnresolvedIncidentModel;
 
-},{"backbone":1}]},{},[6]);
+},{"backbone":1}]},{},[7]);

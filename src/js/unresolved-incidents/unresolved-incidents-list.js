@@ -18,6 +18,7 @@ var UnresolvedIncidentsList = Backbone.View.extend({
           data.moment = moment;
             var template = require('./unresolved-incidents-list.html')['unresolved-incidents'];
             UnresolvedIncidentsList.el.innerHTML = template(data);
+
             document.querySelector('.status-index .container').classList.add('show');
             document.querySelector('#loading-message').classList.add('fade-out');
 

@@ -1030,6 +1030,7 @@ body.index #loading-message.fade-out {
 
 .rax-navbar a:hover, .rax-navbar a:focus, .rax-navbar a:active {
   background-color: #262626;
+  color: white;
 }
 
 .rax-navbar .logo {

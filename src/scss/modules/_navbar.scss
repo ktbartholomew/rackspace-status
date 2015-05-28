@@ -21,6 +21,7 @@
 
         &:hover, &:focus, &:active {
             background-color: tint($black, 15%);
+            color: $white;
         }
     }
 
