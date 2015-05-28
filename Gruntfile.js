@@ -18,7 +18,7 @@ module.exports = function (grunt) {
         },
         concurrent: {
             dev: {
-                tasks: ['connect:dev', 'watch:html', 'watch:sass'],
+                tasks: ['connect:dev', 'watch:dev', 'watch:html', 'watch:sass'],
                 options: {
                     logConcurrentOutput: true
                 }
@@ -31,6 +31,7 @@ module.exports = function (grunt) {
                     hostname: '*',
                     keepalive: true,
                     base: 'public',
+                    livereload: true,
                     middleware: function (connect, options, middlewares) {
                         middlewares.unshift(function (req, res, next) {
                             if(! req.url.match(/^\/api/)) {
@@ -98,6 +99,12 @@ module.exports = function (grunt) {
           }
         },
         watch: {
+            dev: {
+              files: ['public/**/*'],
+              options: {
+                livereload: true
+              }
+            },
             html: {
                 files: ['src/html/**/*', 'src/js/**/*', '!src/js/main.build.js', '!src/js/main.min.js'],
                 tasks: ['browserify:dev', 'processhtml:dev']
