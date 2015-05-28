@@ -1,4 +1,5 @@
 var request = require('request');
+var cheerio = require('cheerio');
 
 module.exports = function (grunt) {
     if(typeof process.env.SP_API_KEY === 'undefined') {
@@ -33,6 +34,7 @@ module.exports = function (grunt) {
                     base: 'public',
                     livereload: true,
                     middleware: function (connect, options, middlewares) {
+                        // proxy API requests with auth
                         middlewares.unshift(function (req, res, next) {
                             if(! req.url.match(/^\/api/)) {
                                 return next();
@@ -48,8 +50,52 @@ module.exports = function (grunt) {
                                 }
                             })
                             .pipe(res);
+                        });
 
-                            // next();
+                        middlewares.unshift(function (req, res, next) {
+                          if(req.url.match(/^\/api/)) {
+                              return next();
+                          }
+
+                          if(req.url.match(/custom\.css/)) {
+                            return next();
+                          }
+
+                          request.get({
+                            url: 'http://rackspace-status-test.polystackdesign.com' + (req.url || '/'),
+                            headers: {
+                                'Authorization': 'OAuth ' + process.env.SP_API_KEY
+                            }
+                          }, function (error, response, body) {
+
+                              response.body = response.body.replace(/rackspace-status-test\.polystackdesign\.com/g,'localhost:3000');
+                              var $ = cheerio.load(response.body);
+
+                              if($('.custom-header-container')) {
+                                // remove the static custom stylesheet
+                                $('link[href*="custom_css_externals"]').remove();
+
+                                // add the local stylesheet
+                                $('head').append('<link rel="stylesheet" href="/custom.css" />');
+
+                                // add the local custom header
+                                $('.custom-header-container').html(
+                                  grunt.file.read('public/custom-header.html')
+                                );
+
+
+                              }
+
+                              if($('.custom-footer-container')) {
+                                // add the local custom footer
+                                $('.custom-footer-container').html(
+                                  grunt.file.read('public/custom-footer.html')
+                                );
+                              }
+
+                              res.write($.html());
+                              res.end();
+                          });
                         });
 
                         return middlewares;
@@ -63,7 +109,8 @@ module.exports = function (grunt) {
             },
             dev: {
                 files: {
-                    'public/index.html': ['src/html/index.html']
+                    'public/custom-header.html': ['src/html/custom-header.html'],
+                    'public/custom-footer.html': ['src/html/custom-footer.html']
                 }
             },
             build: {
@@ -127,4 +174,4 @@ module.exports = function (grunt) {
 
     grunt.registerTask('default', ['processhtml:dev', 'sass:dev', 'concurrent:dev']);
     grunt.registerTask('build', ['browserify:dev', 'uglify:build', 'processhtml:build', 'sass:build']);
-}
+};

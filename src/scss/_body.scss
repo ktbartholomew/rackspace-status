@@ -14,3 +14,8 @@ body * {
         display: block;
     }
 }
+
+
+.container {
+  @include centered-container(960px);
+}

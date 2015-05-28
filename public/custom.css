@@ -267,8 +267,14 @@ body * {
   display: block;
 }
 
+.container {
+  margin: 0 auto;
+  max-width: 960px;
+  width: 90%;
+}
+
 .flat-button {
-  background: #5aaa28;
+  background-color: #5aaa28 !important;
   border-radius: 4px;
   color: white;
   font-size: 12px;
@@ -287,6 +293,13 @@ body * {
   margin-bottom: 0;
 }
 
+.layout-content.status.status-index .unresolved-incidents .unresolved-incident {
+  border: solid 1px #d8d8d8;
+  border-radius: 4px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+}
+
 .layout-content.status.status-index .unresolved-incidents .unresolved-incident.impact-none .incident-title {
   background-color: #7f7f7f;
 }
@@ -299,8 +312,12 @@ body * {
   background-color: #f1c40f;
 }
 
+.layout-content.status.status-index .unresolved-incidents .unresolved-incident.impact-minor .incident-title a {
+  color: #191919;
+}
+
 .layout-content.status.status-index .unresolved-incidents .unresolved-incident.impact-minor .incident-details {
-  border-color: #f1c40f;
+  border: none;
 }
 
 .layout-content.status.status-index .unresolved-incidents .unresolved-incident.impact-major .incident-title {
@@ -328,8 +345,7 @@ body * {
 }
 
 .unresolved-incident .incident-details {
-  border-style: solid;
-  border-width: 0px 1px 1px 1px;
+  border: none;
 }
 
 .unresolved-incident .incident-details .components h5, .unresolved-incident .incident-details .updates h5 {
@@ -359,6 +375,185 @@ body * {
 
 .unresolved-incident .incident-details .updates .list .update:not(:last-child) {
   border-bottom: solid 1px #e5e5e5;
+}
+
+.layout-content.status.status-index .incidents-list .incident-container {
+  border: solid 1px #d8d8d8;
+  border-radius: 4px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  margin-bottom: 3rem;
+}
+
+.layout-content.status.status-index .incidents-list .incident-title {
+  padding: 0.75rem 1.25rem;
+}
+
+.layout-content.status.status-index .incidents-list .incident-title.impact-none {
+  background: #7f7f7f;
+}
+
+.layout-content.status.status-index .incidents-list .incident-title.impact-none a {
+  color: white;
+}
+
+.layout-content.status.status-index .incidents-list .incident-title.impact-none + .updates-container {
+  border: none;
+}
+
+.layout-content.status.status-index .incidents-list .incident-title.impact-minor {
+  background: #f1c40f;
+}
+
+.layout-content.status.status-index .incidents-list .incident-title.impact-minor a {
+  color: #191919;
+}
+
+.layout-content.status.status-index .incidents-list .incident-title.impact-minor + .updates-container {
+  border: none;
+}
+
+.layout-content.status.status-index .incidents-list .incident-title.impact-major {
+  background: #e67e22;
+}
+
+.layout-content.status.status-index .incidents-list .incident-title.impact-major a {
+  color: white;
+}
+
+.layout-content.status.status-index .incidents-list .incident-title.impact-major + .updates-container {
+  border: none;
+}
+
+.layout-content.status.status-index .incidents-list .incident-title.impact-critical {
+  background: #c40022;
+}
+
+.layout-content.status.status-index .incidents-list .incident-title.impact-critical a {
+  color: white;
+}
+
+.layout-content.status.status-index .incidents-list .incident-title.impact-critical + .updates-container {
+  border: none;
+}
+
+.layout-content.status.status-index .incidents-list .updates-container {
+  border-style: solid;
+  border-width: 1px;
+  border-top-width: 0;
+}
+
+.layout-content.status.status-index .incidents-list .updates-container .update {
+  margin: 0;
+  padding: 1.25rem;
+}
+
+.layout-content.status.status-index .incidents-list .updates-container .update:not(:last-child) {
+  border-bottom: solid 1px #e5e5e5;
+}
+
+.layout-content.status.status-incident > .container {
+  border: solid 1px #d8d8d8;
+  border-radius: 4px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  margin: 0 auto;
+  max-width: 960px;
+  width: 90%;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.layout-content.status.status-incident > .container .page-title {
+  margin-bottom: 0;
+}
+
+.layout-content.status.status-incident > .container .incident-name {
+  padding: 0.75rem 1.25rem;
+}
+
+.layout-content.status.status-incident > .container .incident-name.impact-none {
+  background: #7f7f7f;
+  color: white;
+}
+
+.layout-content.status.status-incident > .container .incident-name.impact-minor {
+  background: #f1c40f;
+  color: #191919;
+}
+
+.layout-content.status.status-incident > .container .incident-name.impact-major {
+  background: #e67e22;
+  color: white;
+}
+
+.layout-content.status.status-incident > .container .incident-name.impact-critical {
+  background: #c40022;
+  color: white;
+}
+
+.layout-content.status.status-incident > .container .subheader {
+  display: none;
+}
+
+.layout-content.status.status-incident > .container hr {
+  display: none;
+}
+
+.layout-content.status.status-incident > .container .update-row {
+  border-bottom: solid 1px #e5e5e5;
+  margin-bottom: 0;
+  padding: 1.5rem 1.25rem;
+}
+
+.layout-content.status.status-incident > .container .update-title {
+  color: #aaaaaa;
+  float: none;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.layout-content.status.status-incident > .container .update-container {
+  width: 95.5%;
+}
+
+.layout-content.status.status-incident > .container .components-affected {
+  border: none;
+  padding: 1.5rem 1.25rem;
+}
+
+.layout-content.status.status-incident > .container .page-footer {
+  background: #f2f2f2;
+  margin-top: 0;
+  padding: 0.75rem 1.25rem;
+}
+
+.layout-content.status.status-index .scheduled-maintenances-container .scheduled-maintenance {
+  border: solid 1px #d8d8d8;
+  border-radius: 4px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+}
+
+.layout-content.status.status-index .scheduled-maintenances-container .scheduled-maintenance .incident-title {
+  background: #7f7f7f;
+  border-bottom: none;
+  margin-bottom: 0;
+  padding: 0.75rem 1.25rem;
+}
+
+.layout-content.status.status-index .scheduled-maintenances-container .scheduled-maintenance .incident-title a, .layout-content.status.status-index .scheduled-maintenances-container .scheduled-maintenance .incident-title small {
+  color: white;
+}
+
+.layout-content.status.status-index .scheduled-maintenances-container .scheduled-maintenance .updates-container {
+  border: none;
+}
+
+.layout-content.status.status-index .scheduled-maintenances-container .scheduled-maintenance .updates-container .update {
+  margin: 0;
+  padding: 20px 1.25rem;
 }
 
 .layout-content.status.status-index .components-section .component-container .component-status {
@@ -394,7 +589,7 @@ body * {
   text-indent: -9999px;
   width: 12px;
   background-image: radial-gradient(#8bc368, #5aaa28);
-  box-shadow: 0px 0px 4px #6ab23d;
+  box-shadow: inset 0px 0px 0px 1px #519924;
 }
 
 .status-yellow .component-status {
@@ -407,7 +602,7 @@ body * {
   text-indent: -9999px;
   width: 12px;
   background-image: radial-gradient(#f5d557, #f1c40f);
-  box-shadow: 0px 0px 4px #f2c926;
+  box-shadow: inset 0px 0px 0px 1px #d8b00d;
 }
 
 .status-orange .component-status {
@@ -420,7 +615,7 @@ body * {
   text-indent: -9999px;
   width: 12px;
   background-image: radial-gradient(#eda464, #e67e22);
-  box-shadow: 0px 0px 4px #e88a38;
+  box-shadow: inset 0px 0px 0px 1px #cf711e;
 }
 
 .status-red .component-status {
@@ -433,7 +628,7 @@ body * {
   text-indent: -9999px;
   width: 12px;
   background-image: radial-gradient(#d54c64, #c40022);
-  box-shadow: 0px 0px 4px #c91938;
+  box-shadow: inset 0px 0px 0px 1px #b0001e;
 }
 
 .light, .component-status {
@@ -457,7 +652,7 @@ body * {
   text-indent: -9999px;
   width: 12px;
   background-image: radial-gradient(#d54c64, #c40022);
-  box-shadow: 0px 0px 4px #c91938;
+  box-shadow: inset 0px 0px 0px 1px #b0001e;
 }
 
 .light.partial_outage, .component-status.partial_outage {
@@ -470,7 +665,7 @@ body * {
   text-indent: -9999px;
   width: 12px;
   background-image: radial-gradient(#eda464, #e67e22);
-  box-shadow: 0px 0px 4px #e88a38;
+  box-shadow: inset 0px 0px 0px 1px #cf711e;
 }
 
 .light.degraded_performance, .component-status.degraded_performance {
@@ -483,7 +678,7 @@ body * {
   text-indent: -9999px;
   width: 12px;
   background-image: radial-gradient(#f5d557, #f1c40f);
-  box-shadow: 0px 0px 4px #f2c926;
+  box-shadow: inset 0px 0px 0px 1px #d8b00d;
 }
 
 .light.operational, .component-status.operational {
@@ -496,7 +691,7 @@ body * {
   text-indent: -9999px;
   width: 12px;
   background-image: radial-gradient(#8bc368, #5aaa28);
-  box-shadow: 0px 0px 4px #6ab23d;
+  box-shadow: inset 0px 0px 0px 1px #519924;
 }
 
 .rax-banner {
@@ -654,70 +849,21 @@ body * {
   color: white;
 }
 
-.layout-content.status.status-index .incidents-list .incident-title.impact-none > a, .layout-content.status.status-index .incidents-list .incident-title.impact-minor > a, .layout-content.status.status-index .incidents-list .incident-title.impact-major > a, .layout-content.status.status-index .incidents-list .incident-title.impact-critical > a {
-  color: #191919;
-  padding-left: 10px;
-}
-
-.layout-content.status.status-index .incidents-list .incident-title > a:before {
-  content: '';
-  left: -5px;
-  position: relative;
-}
-
-.layout-content.status.status-index .incidents-list .incident-title.impact-none > a:before {
-  background: #e5e5e5;
-  border-radius: 6px;
-  display: inline-block;
-  height: 12px;
-  margin-right: 0.25em;
-  overflow: hidden;
-  text-indent: -9999px;
-  width: 12px;
-}
-
-.layout-content.status.status-index .incidents-list .incident-title.impact-minor > a:before {
-  background: #e5e5e5;
-  border-radius: 6px;
-  display: inline-block;
-  height: 12px;
-  margin-right: 0.25em;
-  overflow: hidden;
-  text-indent: -9999px;
-  width: 12px;
-  background-image: radial-gradient(#f5d557, #f1c40f);
-  box-shadow: 0px 0px 4px #f2c926;
-}
-
-.layout-content.status.status-index .incidents-list .incident-title.impact-major > a:before {
-  background: #e5e5e5;
-  border-radius: 6px;
-  display: inline-block;
-  height: 12px;
-  margin-right: 0.25em;
-  overflow: hidden;
-  text-indent: -9999px;
-  width: 12px;
-  background-image: radial-gradient(#eda464, #e67e22);
-  box-shadow: 0px 0px 4px #e88a38;
-}
-
-.layout-content.status.status-index .incidents-list .incident-title.impact-critical > a:before {
-  background: #e5e5e5;
-  border-radius: 6px;
-  display: inline-block;
-  height: 12px;
-  margin-right: 0.25em;
-  overflow: hidden;
-  text-indent: -9999px;
-  width: 12px;
-  background-image: radial-gradient(#d54c64, #c40022);
-  box-shadow: 0px 0px 4px #c91938;
+.layout-content.status .incidents-list.format-expanded .status-day .date {
+  border: none;
+  color: #666666;
+  margin-bottom: 1.5rem;
+  padding: 0.75rem 0;
 }
 
 #loading-message {
+  display: none;
+}
+
+body.index #loading-message {
   background: white;
   color: #191919;
+  display: block;
   font-size: 36px;
   height: calc(100vh - 104px);
   padding: calc(40vh - 48px) 0;
@@ -727,25 +873,25 @@ body * {
   width: 100vw;
 }
 
-#loading-message .ld-1, #loading-message .ld-2, #loading-message .ld-3 {
+body.index #loading-message .ld-1, body.index #loading-message .ld-2, body.index #loading-message .ld-3 {
   -webkit-animation: fade 2s ease-in-out infinite;
   -moz-animation: fade 2s ease-in-out infinite;
   animation: fade 2s ease-in-out infinite;
 }
 
-#loading-message .ld-2 {
+body.index #loading-message .ld-2 {
   -webkit-animation-delay: 0.3s;
   -moz-animation-delay: 0.3s;
   animation-delay: 0.3s;
 }
 
-#loading-message .ld-3 {
+body.index #loading-message .ld-3 {
   -webkit-animation-delay: 0.6s;
   -moz-animation-delay: 0.6s;
   animation-delay: 0.6s;
 }
 
-#loading-message.fade-out {
+body.index #loading-message.fade-out {
   opacity: 0;
   -webkit-transition: opacity 0.3s ease-in;
   -moz-transition: opacity 0.3s ease-in;

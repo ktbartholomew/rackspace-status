@@ -1,0 +1,23 @@
+.layout-content.status.status-index .scheduled-maintenances-container .scheduled-maintenance {
+  @include incident-card();
+
+  .incident-title {
+    background: $impact-none;
+    border-bottom: none;
+    margin-bottom: 0;
+    padding: .75rem 1.25rem;
+
+    a, small {
+      color: $white;
+    }
+  }
+
+  .updates-container {
+    border: none;
+
+    .update {
+      margin: 0;
+      padding: 20px 1.25rem;
+    }
+  }
+}

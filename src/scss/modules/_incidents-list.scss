@@ -1,33 +1,8 @@
-.layout-content.status.status-index .incidents-list {
-    .incident-title {
-
-        &.impact-none, &.impact-minor, &.impact-major, &.impact-critical {
-            & > a {
-                color: tint($black, 10%);
-                padding-left: 10px;
-            }
-        }
-
-        & > a:before {
-            content: '';
-            left: -5px;
-            position: relative;
-        }
-
-        &.impact-none > a:before {
-            @include status-light();
-        }
-
-        &.impact-minor > a:before {
-            @include status-light('degraded');
-        }
-
-        &.impact-major > a:before {
-            @include status-light('minor');
-        }
-
-        &.impact-critical > a:before {
-            @include status-light('major');
-        }
-    }
+.layout-content.status .incidents-list.format-expanded {
+  .status-day .date {
+    border: none;
+    color: shade($white, 60%);
+    margin-bottom: 1.5rem;
+    padding: 0.75rem 0;
+  }
 }

@@ -32,6 +32,13 @@
     color: $white;
 }
 
+@mixin incident-card() {
+  border: solid 1px shade($white, 15%);
+  border-radius: 4px;
+  box-shadow: 0px 3px 6px rgba($black, 0.12);
+  overflow: hidden;
+}
+
 @mixin status-light($severity: "") {
     background: shade($white, 10%);
     border-radius: 6px;
@@ -44,22 +51,22 @@
 
     @if $severity == "operational" {
         background-image: radial-gradient(tint($status-operational, 30%), $status-operational);
-        box-shadow: 0px 0px 4px tint($status-operational, 10%);
+        box-shadow: inset 0px 0px 0px 1px shade($status-operational, 10%);
     }
 
     @if $severity == "degraded" {
         background-image: radial-gradient(tint($status-degraded, 30%), $status-degraded);
-        box-shadow: 0px 0px 4px tint($status-degraded, 10%);
+        box-shadow: inset 0px 0px 0px 1px shade($status-degraded, 10%);
     }
 
     @if $severity == "minor" {
         background-image: radial-gradient(tint($status-minor, 30%), $status-minor);
-        box-shadow: 0px 0px 4px tint($status-minor, 10%);
+        box-shadow: inset 0px 0px 0px 1px shade($status-minor, 10%);
     }
 
     @if $severity == "major" {
         background-image: radial-gradient(tint($rax-red, 30%), $rax-red);
-        box-shadow: 0px 0px 4px tint($rax-red, 10%);
+        box-shadow: inset 0px 0px 0px 1px shade($rax-red, 10%);
     }
 }
 
