@@ -10,21 +10,34 @@ var UnresolvedIncidentsList = Backbone.View.extend({
 
         var staticIncidents = this.el.querySelectorAll('.unresolved-incident');
         _.forEach(staticIncidents, function (e,i,a) {
-          e.remove();
+            var incidentTitle = $(e).find('.incident-title');
+            var idLink = $(e).find('[id*="btn-subscribe-modal-"]');
+
+            var incidentId = idLink.attr('id').replace('btn-subscribe-modal-', '');
+
+            var details = $(
+                require('./unresolved-incidents-list.html')['incident-details']({})
+            );
+
+            var oldUpdates = $(e).find('.updates');
+            var newUpdates = details.find('.updates .list');
+            newUpdates.html(oldUpdates.html());
+
+            oldUpdates.remove();
+            details.insertAfter(incidentTitle);
+            $(e).attr('data-incident-id', incidentId);
         });
 
         this.model.fetch().then(function (data) {
-          data._ = _;
-          data.moment = moment;
-            var template = require('./unresolved-incidents-list.html')['unresolved-incidents'];
-            UnresolvedIncidentsList.el.innerHTML = template(data);
+            _(data.incidents).forEach(function (incident, index, scope) {
+                incident._ = _;
 
-            document.querySelector('.status-index .container').classList.add('show');
-            document.querySelector('#loading-message').classList.add('fade-out');
+                var incidentContainer = $('[data-incident-id="' + incident.id + '"]');
+                var componentContainer = incidentContainer.find('.components .list');
 
-            setTimeout(function () {
-                document.querySelector('#loading-message').remove();
-            }, 300);
+                var template = require('./unresolved-incidents-list.html')['incident-components'];
+                componentContainer.html(template(incident));
+            });
         });
 
     }

@@ -43,12 +43,11 @@ body * {
 }
 
 .status-index .container {
-  display: none;
+  /* display: none; */
   max-width: 960px;
-}
-
-.status-index .container.show {
-  display: block;
+  /* &.show {
+        display: block;
+    } */
 }
 
 .status-index .page-status {
@@ -714,7 +713,7 @@ body * {
 body.index #loading-message {
   background: white;
   color: #191919;
-  display: block;
+  display: none;
   font-size: 36px;
   height: calc(100vh - 104px);
   padding: calc(40vh - 48px) 0;

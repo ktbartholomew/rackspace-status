@@ -15783,8 +15783,6 @@ if(document.querySelector('.current-year')) {
   }).render();
 }
 
-
-
 $('.powered-by').appendTo('#vendor-credit');
 
 $('.component-inner-container').each(function () {
@@ -15848,72 +15846,21 @@ module.exports = StatusModel;
 },{"backbone":1}],11:[function(require,module,exports){
 _ = require('underscore');
 module.exports = {
-    "unresolved-incidents": function(obj){
+    "incident-details": function(obj){
+var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
+__p+='\n    <div class="incident-details">\n        <div class="components">\n            <h5>Affected Components</h5>\n            <div class="list">\n                <div class="component">\n                    <strong>Loading Affected Components&hellip;</strong>\n                </div>\n            </div>\n        </div>\n        <div class="updates">\n            <h5>Updates</h5>\n            <div class="list"></div>\n        </div>\n    </div>\n';
+return __p;
+},
+    "incident-components": function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
 __p+='\n    ';
- if(obj.incidents.length > 0) { 
-__p+='\n        <h4>Current Incidents</h4>\n    ';
- } /* endif */ 
-__p+='\n  ';
- _(obj.incidents).forEach(function (incident, index, scope) { 
-__p+='\n    <div class="unresolved-incident impact-'+
-((__t=( incident.impact ))==null?'':__t)+
-'">\n      <div class="incident-title font-large">\n        <a class="actual-title with-ellipsis" href="/incidents/'+
-((__t=( incident.id ))==null?'':__t)+
-'">'+
-((__t=( incident.name ))==null?'':__t)+
-'</a>\n        <a class="subscribe" data-toggle="modal" href="#subscribe-modal-'+
-((__t=( incident.id ))==null?'':__t)+
-'" id="btn-subscribe-modal-'+
-((__t=( incident.id ))==null?'':__t)+
-'">Subscribe</a>\n      </div>\n      <div class="incident-details">\n        ';
- if(incident.components.length > 0) { 
-__p+='\n        <div class="components">\n          <h5>Affected Components</h5>\n          <div class="list">\n            ';
- _(incident.components).forEach(function (component, index, scope) { 
-__p+='\n            <div class="component">\n              <span class="light '+
+ _(obj.components).forEach(function (component, index, scope) { 
+__p+='\n    <div class="component">\n      <span class="light '+
 ((__t=( component.status ))==null?'':__t)+
-'"></span>\n              <strong>'+
+'"></span>\n      <strong>'+
 ((__t=( component.name ))==null?'':__t)+
-'</strong>\n            </div>\n            ';
+'</strong>\n    </div>\n    ';
  }); 
-__p+='\n          </div>\n        </div>\n        ';
- } /* endif */ 
-__p+='\n\n        ';
- if(incident.incident_updates.length > 0) { 
-__p+='\n        <div class="updates font-regular">\n          <h5>Updates</h5>\n            <div class="list">\n              ';
- _(incident.incident_updates).forEach(function (update, index, scope) { 
-__p+='\n                ';
- var rawDate = new Date(update.display_at); 
-__p+='\n                ';
- var momentDate = obj.moment(rawDate); 
-__p+='\n                <div class="update">\n                  <strong>'+
-((__t=( update.status.charAt(0).toUpperCase() + update.status.substring(1) ))==null?'':__t)+
-'</strong> &ndash; '+
-((__t=( update.body ))==null?'':__t)+
-' <br>\n                  <small>'+
-((__t=( momentDate.format('MMMM D, hh:mm Z') ))==null?'':__t)+
-'</small>\n                </div>\n              ';
- }); 
-__p+='\n            </div>\n        </div>\n        ';
- } /* endif */ 
-__p+='\n      </div>\n    </div>\n    <div class="modal hide fade modal-open-incident-subscribe" id="subscribe-modal-'+
-((__t=( incident.id ))==null?'':__t)+
-'" style="display: none">\n      <div class="modal-header">\n        <a href="#" data-dismiss="modal" class="close">×</a>\n        <h4>Subscribe to Incident</h4>\n      </div>\n      <form accept-charset="UTF-8" action="/subscribe.json" data-remote="true" id="subscribe-form-'+
-((__t=( incident.id ))==null?'':__t)+
-'" method="post">\n        <div style="display:none">\n          <input name="utf8" type="hidden" value="✓">\n        </div>\n        <input id="incident_code" name="incident_code" type="hidden" value="'+
-((__t=( incident.id ))==null?'':__t)+
-'">\n        <div class="modal-body">\n          <p style="margin-bottom:25px">\n            Subscribe to updates for <strong>'+
-((__t=( incident.name ))==null?'':__t)+
-'</strong> via email and/or SMS.\n            Whenever an update is posted, you\'ll receive a notification.\n          </p>\n\n          <div class="control-group">\n            <label>Get Updates Via Email</label>\n            <div class="controls">\n              <input class="full-width" data-js-hook="email" id="email-'+
-((__t=( incident.id ))==null?'':__t)+
-'" name="email" placeholder="Email Address" type="text">\n            </div>\n          </div>\n\n          <div class="control-group">\n            <label>Get Updates Via Text Message</label>\n            <div class="controls phone-number " data-js-hook="modal-open-incident-subscribe-phone-number">\n              <select class="span6" data-js-hook="phone-country" id="phone-country-'+
-((__t=( incident.id ))==null?'':__t)+
-'" name="phone_country">\n                <option value="af">Afghanistan (+93)</option>\n                <option value="al">Albania (+355)</option>\n                <option value="dz">Algeria (+213)</option>\n                <option value="as">American Samoa (+1684)</option>\n                <option value="ad">Andorra (+376)</option>\n                <option value="ao">Angola (+244)</option>\n                <option value="ai">Anguilla (+1264)</option>\n                <option value="ag">Antigua and Barbuda (+1268)</option>\n                <option value="ar">Argentina (+54)</option>\n                <option value="am">Armenia (+374)</option>\n                <option value="aw">Aruba (+297)</option>\n                <option value="au">Australia/Cocos/Christmas Island (+61)</option>\n                <option value="at">Austria (+43)</option>\n                <option value="az">Azerbaijan (+994)</option>\n                <option value="bs">Bahamas (+1)</option>\n                <option value="bh">Bahrain (+973)</option>\n                <option value="bd">Bangladesh (+880)</option>\n                <option value="bb">Barbados (+1246)</option>\n                <option value="by">Belarus (+375)</option>\n                <option value="be">Belgium (+32)</option>\n                <option value="bz">Belize (+501)</option>\n                <option value="bj">Benin (+229)</option>\n                <option value="bm">Bermuda (+1441)</option>\n                <option value="bo">Bolivia (+591)</option>\n                <option value="ba">Bosnia and Herzegovina (+387)</option>\n                <option value="bw">Botswana (+267)</option>\n                <option value="br">Brazil (+55)</option>\n                <option value="bn">Brunei (+673)</option>\n                <option value="bg">Bulgaria (+359)</option>\n                <option value="bf">Burkina Faso (+226)</option>\n                <option value="bi">Burundi (+257)</option>\n                <option value="kh">Cambodia (+855)</option>\n                <option value="cm">Cameroon (+237)</option>\n                <option value="ca">Canada (+1)</option>\n                <option value="cv">Cape Verde (+238)</option>\n                <option value="ky">Cayman Islands (+1345)</option>\n                <option value="cf">Central Africa (+236)</option>\n                <option value="td">Chad (+235)</option>\n                <option value="cl">Chile (+56)</option>\n                <option value="cn">China (+86)</option>\n                <option value="co">Colombia (+57)</option>\n                <option value="km">Comoros (+269)</option>\n                <option value="cg">Congo (+242)</option>\n                <option value="cd">Congo, Dem Rep (+243)</option>\n                <option value="cr">Costa Rica (+506)</option>\n                <option value="hr">Croatia (+385)</option>\n                <option value="cy">Cyprus (+357)</option>\n                <option value="cz">Czech Republic (+420)</option>\n                <option value="dk">Denmark (+45)</option>\n                <option value="dj">Djibouti (+253)</option>\n                <option value="dm">Dominica (+1767)</option>\n                <option value="do">Dominican Republic (+1809)</option>\n                <option value="eg">Egypt (+20)</option>\n                <option value="sv">El Salvador (+503)</option>\n                <option value="gq">Equatorial Guinea (+240)</option>\n                <option value="ee">Estonia (+372)</option>\n                <option value="et">Ethiopia (+251)</option>\n                <option value="fo">Faroe Islands (+298)</option>\n                <option value="fj">Fiji (+679)</option>\n                <option value="fi">Finland/Aland Islands (+358)</option>\n                <option value="fr">France (+33)</option>\n                <option value="gf">French Guiana (+594)</option>\n                <option value="pf">French Polynesia (+689)</option>\n                <option value="ga">Gabon (+241)</option>\n                <option value="gm">Gambia (+220)</option>\n                <option value="ge">Georgia (+995)</option>\n                <option value="de">Germany (+49)</option>\n                <option value="gh">Ghana (+233)</option>\n                <option value="gi">Gibraltar (+350)</option>\n                <option value="gr">Greece (+30)</option>\n                <option value="gl">Greenland (+299)</option>\n                <option value="gd">Grenada (+1473)</option>\n                <option value="gp">Guadeloupe (+590)</option>\n                <option value="gu">Guam (+1671)</option>\n                <option value="gt">Guatemala (+502)</option>\n                <option value="gn">Guinea (+224)</option>\n                <option value="gy">Guyana (+592)</option>\n                <option value="ht">Haiti (+509)</option>\n                <option value="hn">Honduras (+504)</option>\n                <option value="hk">Hong Kong (+852)</option>\n                <option value="hu">Hungary (+36)</option>\n                <option value="is">Iceland (+354)</option>\n                <option value="in">India (+91)</option>\n                <option value="id">Indonesia (+62)</option>\n                <option value="ir">Iran (+98)</option>\n                <option value="iq">Iraq (+964)</option>\n                <option value="ie">Ireland (+353)</option>\n                <option value="il">Israel (+972)</option>\n                <option value="it">Italy (+39)</option>\n                <option value="jm">Jamaica (+1876)</option>\n                <option value="jp">Japan (+81)</option>\n                <option value="jo">Jordan (+962)</option>\n                <option value="ke">Kenya (+254)</option>\n                <option value="kr">Korea, Republic of (+82)</option>\n                <option value="kw">Kuwait (+965)</option>\n                <option value="kg">Kyrgyzstan (+996)</option>\n                <option value="la">Laos (+856)</option>\n                <option value="lv">Latvia (+371)</option>\n                <option value="lb">Lebanon (+961)</option>\n                <option value="ls">Lesotho (+266)</option>\n                <option value="lr">Liberia (+231)</option>\n                <option value="ly">Libya (+218)</option>\n                <option value="li">Liechtenstein (+423)</option>\n                <option value="lt">Lithuania (+370)</option>\n                <option value="lu">Luxembourg (+352)</option>\n                <option value="mo">Macao (+853)</option>\n                <option value="mk">Macedonia (+389)</option>\n                <option value="mg">Madagascar (+261)</option>\n                <option value="mw">Malawi (+265)</option>\n                <option value="my">Malaysia (+60)</option>\n                <option value="mv">Maldives (+960)</option>\n                <option value="ml">Mali (+223)</option>\n                <option value="mt">Malta (+356)</option>\n                <option value="mq">Martinique (+596)</option>\n                <option value="mr">Mauritania (+222)</option>\n                <option value="mu">Mauritius (+230)</option>\n                <option value="mx">Mexico (+52)</option>\n                <option value="mc">Monaco (+377)</option>\n                <option value="mn">Mongolia (+976)</option>\n                <option value="me">Montenegro (+382)</option>\n                <option value="ms">Montserrat (+1664)</option>\n                <option value="ma">Morocco/Western Sahara (+212)</option>\n                <option value="mz">Mozambique (+258)</option>\n                <option value="na">Namibia (+264)</option>\n                <option value="np">Nepal (+977)</option>\n                <option value="nl">Netherlands (+31)</option>\n                <option value="nz">New Zealand (+64)</option>\n                <option value="ni">Nicaragua (+505)</option>\n                <option value="ne">Niger (+227)</option>\n                <option value="ng">Nigeria (+234)</option>\n                <option value="no">Norway (+47)</option>\n                <option value="om">Oman (+968)</option>\n                <option value="pk">Pakistan (+92)</option>\n                <option value="ps">Palestinian Territory (+970)</option>\n                <option value="pa">Panama (+507)</option>\n                <option value="py">Paraguay (+595)</option>\n                <option value="pe">Peru (+51)</option>\n                <option value="ph">Philippines (+63)</option>\n                <option value="pl">Poland (+48)</option>\n                <option value="pt">Portugal (+351)</option>\n                <option value="pr">Puerto Rico (+1787)</option>\n                <option value="qa">Qatar (+974)</option>\n                <option value="re">Reunion/Mayotte (+262)</option>\n                <option value="ro">Romania (+40)</option>\n                <option value="ru">Russia/Kazakhstan (+7)</option>\n                <option value="rw">Rwanda (+250)</option>\n                <option value="ws">Samoa (+685)</option>\n                <option value="sm">San Marino (+378)</option>\n                <option value="sa">Saudi Arabia (+966)</option>\n                <option value="sn">Senegal (+221)</option>\n                <option value="rs">Serbia (+381)</option>\n                <option value="sc">Seychelles (+248)</option>\n                <option value="sl">Sierra Leone (+232)</option>\n                <option value="sg">Singapore (+65)</option>\n                <option value="sk">Slovakia (+421)</option>\n                <option value="si">Slovenia (+386)</option>\n                <option value="za">South Africa (+27)</option>\n                <option value="es">Spain (+34)</option>\n                <option value="lk">Sri Lanka (+94)</option>\n                <option value="kn">St Kitts and Nevis (+1869)</option>\n                <option value="lc">St Lucia (+1758)</option>\n                <option value="vc">St Vincent Grenadines (+1784)</option>\n                <option value="sd">Sudan (+249)</option>\n                <option value="sr">Suriname (+597)</option>\n                <option value="sz">Swaziland (+268)</option>\n                <option value="se">Sweden (+46)</option>\n                <option value="ch">Switzerland (+41)</option>\n                <option value="sy">Syria (+963)</option>\n                <option value="tw">Taiwan (+886)</option>\n                <option value="tj">Tajikistan (+992)</option>\n                <option value="tz">Tanzania (+255)</option>\n                <option value="th">Thailand (+66)</option>\n                <option value="tg">Togo (+228)</option>\n                <option value="to">Tonga (+676)</option>\n                <option value="tt">Trinidad and Tobago (+1868)</option>\n                <option value="tn">Tunisia (+216)</option>\n                <option value="tr">Turkey (+90)</option>\n                <option value="tc">Turks and Caicos Islands (+1649)</option>\n                <option value="ug">Uganda (+256)</option>\n                <option value="ua">Ukraine (+380)</option>\n                <option value="ae">United Arab Emirates (+971)</option>\n                <option value="gb">United Kingdom (+44)</option>\n                <option selected="selected" value="us">United States (+1)</option>\n                <option value="uy">Uruguay (+598)</option>\n                <option value="uz">Uzbekistan (+998)</option>\n                <option value="ve">Venezuela (+58)</option>\n                <option value="vn">Vietnam (+84)</option>\n                <option value="vg">Virgin Islands, British (+1284)</option>\n                <option value="vi">Virgin Islands, U.S. (+1340)</option>\n                <option value="ye">Yemen (+967)</option>\n                <option value="zm">Zambia (+260)</option>\n                <option value="zw">Zimbabwe (+263)</option>\n              </select>\n              <input class="span12" data-js-hook="phone-number" id="phone-number-'+
-((__t=( incident.id ))==null?'':__t)+
-'" name="phone_number" placeholder="ex. 6505551234" type="text">\n              <p class="help-block span12">\n                SMS messages are only sent when incidents are <em>opened</em> and <em>resolved</em><br>\n                <a data-js-hook="show-phone-country-toggle" href="#">Not a US/CA phone number?</a>\n              </p>\n            </div>\n          </div>\n        </div>\n        <div class="modal-footer">\n          <button class="flat-button" data-disabled-text="Subscribing..." data-revert-on-success="true" id="subscribe-btn-'+
-((__t=( incident.id ))==null?'':__t)+
-'" name="button" type="submit">Subscribe to Incident</button>\n        </div>\n      </form>\n    </div>\n  ';
- }); /* endforEach */ 
 __p+='\n';
 return __p;
 }
@@ -15931,21 +15878,34 @@ var UnresolvedIncidentsList = Backbone.View.extend({
 
         var staticIncidents = this.el.querySelectorAll('.unresolved-incident');
         _.forEach(staticIncidents, function (e,i,a) {
-          e.remove();
+            var incidentTitle = $(e).find('.incident-title');
+            var idLink = $(e).find('[id*="btn-subscribe-modal-"]');
+
+            var incidentId = idLink.attr('id').replace('btn-subscribe-modal-', '');
+
+            var details = $(
+                require('./unresolved-incidents-list.html')['incident-details']({})
+            );
+
+            var oldUpdates = $(e).find('.updates');
+            var newUpdates = details.find('.updates .list');
+            newUpdates.html(oldUpdates.html());
+
+            oldUpdates.remove();
+            details.insertAfter(incidentTitle);
+            $(e).attr('data-incident-id', incidentId);
         });
 
         this.model.fetch().then(function (data) {
-          data._ = _;
-          data.moment = moment;
-            var template = require('./unresolved-incidents-list.html')['unresolved-incidents'];
-            UnresolvedIncidentsList.el.innerHTML = template(data);
+            _(data.incidents).forEach(function (incident, index, scope) {
+                incident._ = _;
 
-            document.querySelector('.status-index .container').classList.add('show');
-            document.querySelector('#loading-message').classList.add('fade-out');
+                var incidentContainer = $('[data-incident-id="' + incident.id + '"]');
+                var componentContainer = incidentContainer.find('.components .list');
 
-            setTimeout(function () {
-                document.querySelector('#loading-message').remove();
-            }, 300);
+                var template = require('./unresolved-incidents-list.html')['incident-components'];
+                componentContainer.html(template(incident));
+            });
         });
 
     }

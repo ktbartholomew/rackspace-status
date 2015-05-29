@@ -22,8 +22,6 @@ if(document.querySelector('.current-year')) {
   }).render();
 }
 
-
-
 $('.powered-by').appendTo('#vendor-credit');
 
 $('.component-inner-container').each(function () {

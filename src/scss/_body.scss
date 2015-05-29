@@ -7,12 +7,12 @@ body * {
 }
 
 .status-index .container {
-    display: none;
+    /* display: none; */
     max-width: 960px;
 
-    &.show {
+    /* &.show {
         display: block;
-    }
+    } */
 }
 
 .status-index .page-status {
