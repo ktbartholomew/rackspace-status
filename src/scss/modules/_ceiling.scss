@@ -45,4 +45,31 @@
             }
         }
     }
+
+    .updates-dropdown-container {
+        float: right;
+        line-height: 42px;
+
+        .show-updates-dropdown {
+            background: $rax-blue;
+            border-radius: 4px;
+            color: $white;
+            padding: 0.75em 3em;
+            text-transform: uppercase;
+        }
+
+        .updates-dropdown {
+            line-height: 1.5;
+            right: 0;
+            top: 98%;
+
+            .flat-button {
+                background-color: $rax-blue !important;
+            }
+
+            .updates-dropdown-nav a.active {
+                background-color: $rax-blue;
+            }
+        }
+    }
 }
