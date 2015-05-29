@@ -15749,6 +15749,45 @@ arguments[4][2][0].apply(exports,arguments)
 },{"dup":2}],6:[function(require,module,exports){
 var Backbone = require('backbone');
 
+var ComponentsRollup = Backbone.View.extend({
+    show: false,
+    firstRenderComplete: false,
+    render: function () {
+        if(!this.firstRenderComplete) {
+            return this.firstRender();
+        }
+
+        if(this.show) {
+            this.el.classList.add('show');
+        }
+        else {
+            this.el.classList.remove('show');
+        }
+    },
+    firstRender: function () {
+        var rollupLink = document.createElement('button');
+        rollupLink.className = 'components-toggle';
+        rollupLink.innerHTML = '<span class="show">Show</span><span class="hide">Hide</span> All Components/Statuses <span class="fa fa-caret-down"></span>';
+
+        this.el.insertBefore(rollupLink, this.el.children[0]);
+        this.addEventListeners();
+
+        this.firstRenderComplete = true;
+    },
+    addEventListeners: function () {
+        var ComponentsRollup = this;
+        $(this.el).on('click', '.components-toggle', function (e) {
+            ComponentsRollup.show = !ComponentsRollup.show;
+            ComponentsRollup.render();
+        });
+    }
+});
+
+module.exports = ComponentsRollup;
+
+},{"backbone":1}],7:[function(require,module,exports){
+var Backbone = require('backbone');
+
 var CurrentYear = Backbone.View.extend({
   render: function () {
     var d = new Date();
@@ -15758,23 +15797,31 @@ var CurrentYear = Backbone.View.extend({
 
 module.exports = CurrentYear;
 
-},{"backbone":1}],7:[function(require,module,exports){
+},{"backbone":1}],8:[function(require,module,exports){
 document.body.id = 'rax-status-page';
 
-var StatusBannerView = require('./status/status-banner');
+
 var UnresolvedIncidentsList = require('./unresolved-incidents/unresolved-incidents-list');
 var CurrentYear = require('./current-year');
 
 if(document.querySelector('.layout-content.status-index #rax-banner')) {
-  new StatusBannerView({
-    el: document.querySelector('.layout-content.status-index #rax-banner')
-  }).render();
+    var StatusBannerView = require('./status/status-banner');
+    new StatusBannerView({
+        el: document.querySelector('.layout-content.status-index #rax-banner')
+    }).render();
 }
 
 if(document.querySelector('.layout-content.status-index .unresolved-incidents')) {
   new UnresolvedIncidentsList({
     el: document.querySelector('.layout-content.status-index .unresolved-incidents')
   }).render();
+}
+
+if(document.querySelector('.layout-content.status-index .components-section')) {
+    var ComponentsRollup = require('./components/components-rollup');
+    new ComponentsRollup({
+        el: document.querySelector('.layout-content.status-index .components-section')
+    }).render();
 }
 
 if(document.querySelector('.current-year')) {
@@ -15790,7 +15837,7 @@ $('.component-inner-container').each(function () {
   $(this).find('.component-status').prependTo($(this).find('.name'));
 });
 
-},{"./current-year":6,"./status/status-banner":9,"./unresolved-incidents/unresolved-incidents-list":12}],8:[function(require,module,exports){
+},{"./components/components-rollup":6,"./current-year":7,"./status/status-banner":10,"./unresolved-incidents/unresolved-incidents-list":13}],9:[function(require,module,exports){
 _ = require('underscore');
 module.exports = {
     "status-banner-template": function(obj){
@@ -15807,7 +15854,7 @@ __p+='\n';
 return __p;
 }
 };
-},{"underscore":5}],9:[function(require,module,exports){
+},{"underscore":5}],10:[function(require,module,exports){
 var Backbone = require('backbone'),
     StatusModel = require('./status-model');
 
@@ -15833,7 +15880,7 @@ var StatusBanner = Backbone.View.extend({
 
 module.exports = StatusBanner;
 
-},{"./status-banner.html":8,"./status-model":10,"backbone":1}],10:[function(require,module,exports){
+},{"./status-banner.html":9,"./status-model":11,"backbone":1}],11:[function(require,module,exports){
 var Backbone = require('backbone');
 
 var StatusModel = Backbone.Model.extend({
@@ -15843,7 +15890,7 @@ var StatusModel = Backbone.Model.extend({
 });
 
 module.exports = StatusModel;
-},{"backbone":1}],11:[function(require,module,exports){
+},{"backbone":1}],12:[function(require,module,exports){
 _ = require('underscore');
 module.exports = {
     "incident-details": function(obj){
@@ -15865,7 +15912,7 @@ __p+='\n';
 return __p;
 }
 };
-},{"underscore":5}],12:[function(require,module,exports){
+},{"underscore":5}],13:[function(require,module,exports){
 var Backbone = require('backbone'),
     _ = require('underscore'),
     moment = require('moment'),
@@ -15913,7 +15960,7 @@ var UnresolvedIncidentsList = Backbone.View.extend({
 
 module.exports = UnresolvedIncidentsList;
 
-},{"./unresolved-incidents-list.html":11,"./unresolved-incidents-model":13,"backbone":1,"moment":4,"underscore":5}],13:[function(require,module,exports){
+},{"./unresolved-incidents-list.html":12,"./unresolved-incidents-model":14,"backbone":1,"moment":4,"underscore":5}],14:[function(require,module,exports){
 var Backbone = require('backbone');
 
 var UnresolvedIncidentModel = Backbone.Model.extend({
@@ -15924,4 +15971,4 @@ var UnresolvedIncidentModel = Backbone.Model.extend({
 
 module.exports = UnresolvedIncidentModel;
 
-},{"backbone":1}]},{},[7]);
+},{"backbone":1}]},{},[8]);

@@ -12,6 +12,11 @@
         margin-right: -0.25em;
         padding: 0 1.2em;
         @include transition(background-color 0.1s ease-in-out);
+
+        &:hover, &:focus, &:active {
+            background-color: tint($black, 15%);
+            color: $white;
+        }
     }
 
     a {
@@ -41,6 +46,25 @@
         @media only screen and (min-width: 700px) {
             background-size: calc(100% - 24px) auto;
             width: 165px;
+        }
+    }
+
+    .updates-dropdown {
+        line-height: 1.5;
+
+        a {
+            color: $rax-blue;
+            text-transform: none;
+
+            &:hover, &:focus, &:active {
+                background-color: transparent;
+                color: shade($rax-blue, 10%);
+                text-decoration: underline;
+            }
+        }
+
+        .updates-dropdown-sections-container {
+            color: tint($black, 67%);
         }
     }
 }

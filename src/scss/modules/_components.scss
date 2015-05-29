@@ -1,3 +1,63 @@
 .layout-content.status.status-index .components-section {
-    display: none;
+    .components-toggle {
+        background: shade($white, 5%);
+        border: solid 1px shade($white, 10%);
+        border-radius: 4px;
+        display: block;
+        padding: 0.75rem 1.25rem;
+        text-align: center;
+        @include transition(all 0.3s ease-in-out);
+        width: 100%;
+
+        &:hover {
+            background: shade($white, 3%);
+        }
+
+        &:active, &:focus {
+            outline: none;
+        }
+
+        .show {
+            display: inline;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .fa-caret-down {
+            @include transition(transform 0.3s ease-in-out);
+        }
+    }
+
+    .components-container.one-column {
+        max-height: 0;
+        @include transition(max-height 0.3s ease-in-out);
+
+        .component-container:first-child {
+            border-radius: 0px !important;
+            border-top: none;
+        }
+    }
+
+    &.show {
+        .components-toggle {
+            border-radius: 4px 4px 0 0;
+
+            .show {
+                display: none;
+            }
+
+            .hide {
+                display: inline;
+            }
+
+            .fa-caret-down {
+                @include transform(rotate(-180deg));
+            }
+        }
+        .components-container {
+            max-height: 9999px;
+        }
+    }
 }

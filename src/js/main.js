@@ -1,19 +1,27 @@
 document.body.id = 'rax-status-page';
 
-var StatusBannerView = require('./status/status-banner');
+
 var UnresolvedIncidentsList = require('./unresolved-incidents/unresolved-incidents-list');
 var CurrentYear = require('./current-year');
 
 if(document.querySelector('.layout-content.status-index #rax-banner')) {
-  new StatusBannerView({
-    el: document.querySelector('.layout-content.status-index #rax-banner')
-  }).render();
+    var StatusBannerView = require('./status/status-banner');
+    new StatusBannerView({
+        el: document.querySelector('.layout-content.status-index #rax-banner')
+    }).render();
 }
 
 if(document.querySelector('.layout-content.status-index .unresolved-incidents')) {
   new UnresolvedIncidentsList({
     el: document.querySelector('.layout-content.status-index .unresolved-incidents')
   }).render();
+}
+
+if(document.querySelector('.layout-content.status-index .components-section')) {
+    var ComponentsRollup = require('./components/components-rollup');
+    new ComponentsRollup({
+        el: document.querySelector('.layout-content.status-index .components-section')
+    }).render();
 }
 
 if(document.querySelector('.current-year')) {
