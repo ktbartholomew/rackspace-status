@@ -16,7 +16,7 @@
         margin-right: -0.25em;
         position: relative;
 
-        &:not(:last-child) {
+        &:first-child {
             margin-right: 10px;
             padding-right: 10px;
 
