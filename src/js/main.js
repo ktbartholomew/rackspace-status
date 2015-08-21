@@ -17,6 +17,14 @@ if(document.querySelector('.layout-content.status-index .unresolved-incidents'))
   }).render();
 }
 
+if(document.querySelector('.scheduled-maintenances-container')) {
+    var MaintenanceView = require('./maintenance/scheduled-maintenance');
+
+    new MaintenanceView({
+        el: document.querySelector('.scheduled-maintenances-container')
+    }).render();
+}
+
 if(document.querySelector('.layout-content.status-index .components-section')) {
     var ComponentsRollup = require('./components/components-rollup');
     new ComponentsRollup({

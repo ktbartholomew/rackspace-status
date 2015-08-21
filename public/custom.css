@@ -84,7 +84,7 @@ body * {
 }
 
 .layout-content.status.status-full-history .months-container .month .incident-container {
-  border: solid 1px #d8d8d8;
+  border: solid 1px #d9d9d9;
   border-radius: 4px;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.12);
   overflow: hidden;
@@ -97,7 +97,7 @@ body * {
 }
 
 .layout-content.status.status-full-history .months-container .month .incident-container .incident-title.impact-none {
-  background: #7f7f7f;
+  background: gray;
   color: white;
 }
 
@@ -125,7 +125,7 @@ body * {
 }
 
 .layout-content.status.status-index .incidents-list .incident-container {
-  border: solid 1px #d8d8d8;
+  border: solid 1px #d9d9d9;
   border-radius: 4px;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.12);
   overflow: hidden;
@@ -142,7 +142,7 @@ body * {
 }
 
 .layout-content.status.status-index .incidents-list .incident-title.impact-none {
-  background: #7f7f7f;
+  background: gray;
 }
 
 .layout-content.status.status-index .incidents-list .incident-title.impact-none a {
@@ -201,11 +201,11 @@ body * {
 }
 
 .layout-content.status.status-index .incidents-list .updates-container .update:not(:last-child) {
-  border-bottom: solid 1px #e5e5e5;
+  border-bottom: solid 1px #e6e6e6;
 }
 
 .layout-content.status.status-incident > .container {
-  border: solid 1px #d8d8d8;
+  border: solid 1px #d9d9d9;
   border-radius: 4px;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.12);
   overflow: hidden;
@@ -225,7 +225,7 @@ body * {
 }
 
 .layout-content.status.status-incident > .container .incident-name.impact-none {
-  background: #7f7f7f;
+  background: gray;
   color: white;
 }
 
@@ -253,13 +253,13 @@ body * {
 }
 
 .layout-content.status.status-incident > .container .update-row {
-  border-bottom: solid 1px #e5e5e5;
+  border-bottom: solid 1px #e6e6e6;
   margin-bottom: 0;
   padding: 1.5rem 1.25rem;
 }
 
 .layout-content.status.status-incident > .container .update-title {
-  color: #aaaaaa;
+  color: #ababab;
   float: none;
   font-size: 11px;
   font-weight: 700;
@@ -286,7 +286,7 @@ body * {
 }
 
 .layout-content.status.status-index .unresolved-incidents .unresolved-incident {
-  border: solid 1px #d8d8d8;
+  border: solid 1px #d9d9d9;
   border-radius: 4px;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.12);
   overflow: hidden;
@@ -297,7 +297,7 @@ body * {
 }
 
 .layout-content.status.status-index .unresolved-incidents .unresolved-incident .incident-details .components h5, .layout-content.status.status-index .unresolved-incidents .unresolved-incident .incident-details .updates h5 {
-  background: #e5e5e5;
+  background: #e6e6e6;
   font-size: 0.8rem;
   margin: 0;
   padding: 0 1.25rem;
@@ -324,15 +324,15 @@ body * {
 }
 
 .layout-content.status.status-index .unresolved-incidents .unresolved-incident .incident-details .updates .list .update:not(:last-child) {
-  border-bottom: solid 1px #e5e5e5;
+  border-bottom: solid 1px #e6e6e6;
 }
 
 .layout-content.status.status-index .unresolved-incidents .unresolved-incident.impact-none .incident-title {
-  background-color: #7f7f7f;
+  background-color: gray;
 }
 
 .layout-content.status.status-index .unresolved-incidents .unresolved-incident.impact-none .incident-details {
-  border-color: #7f7f7f;
+  border-color: gray;
 }
 
 .layout-content.status.status-index .unresolved-incidents .unresolved-incident.impact-minor .incident-title {
@@ -364,14 +364,14 @@ body * {
 }
 
 .layout-content.status.status-index .scheduled-maintenances-container .scheduled-maintenance {
-  border: solid 1px #d8d8d8;
+  border: solid 1px #d9d9d9;
   border-radius: 4px;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.12);
   overflow: hidden;
 }
 
 .layout-content.status.status-index .scheduled-maintenances-container .scheduled-maintenance .incident-title {
-  background: #7f7f7f;
+  background: gray;
   border-bottom: none;
   margin-bottom: 0;
   padding: 0.75rem 1.25rem;
@@ -403,7 +403,7 @@ body * {
 }
 
 .component-status {
-  background: #e5e5e5;
+  background: #e6e6e6;
   border-radius: 6px;
   display: inline-block;
   height: 12px;
@@ -414,7 +414,7 @@ body * {
 }
 
 .status-green .component-status {
-  background: #e5e5e5;
+  background: #e6e6e6;
   border-radius: 6px;
   display: inline-block;
   height: 12px;
@@ -422,12 +422,12 @@ body * {
   overflow: hidden;
   text-indent: -9999px;
   width: 12px;
-  background-image: radial-gradient(#8bc368, #5aaa28);
+  background-image: radial-gradient(#8cc469, #5aaa28);
   box-shadow: inset 0px 0px 0px 1px #519924;
 }
 
 .status-yellow .component-status {
-  background: #e5e5e5;
+  background: #e6e6e6;
   border-radius: 6px;
   display: inline-block;
   height: 12px;
@@ -435,12 +435,12 @@ body * {
   overflow: hidden;
   text-indent: -9999px;
   width: 12px;
-  background-image: radial-gradient(#f5d557, #f1c40f);
-  box-shadow: inset 0px 0px 0px 1px #d8b00d;
+  background-image: radial-gradient(#f5d657, #f1c40f);
+  box-shadow: inset 0px 0px 0px 1px #d9b00e;
 }
 
 .status-orange .component-status {
-  background: #e5e5e5;
+  background: #e6e6e6;
   border-radius: 6px;
   display: inline-block;
   height: 12px;
@@ -448,12 +448,12 @@ body * {
   overflow: hidden;
   text-indent: -9999px;
   width: 12px;
-  background-image: radial-gradient(#eda464, #e67e22);
-  box-shadow: inset 0px 0px 0px 1px #cf711e;
+  background-image: radial-gradient(#eea564, #e67e22);
+  box-shadow: inset 0px 0px 0px 1px #cf711f;
 }
 
 .status-red .component-status {
-  background: #e5e5e5;
+  background: #e6e6e6;
   border-radius: 6px;
   display: inline-block;
   height: 12px;
@@ -461,12 +461,12 @@ body * {
   overflow: hidden;
   text-indent: -9999px;
   width: 12px;
-  background-image: radial-gradient(#d54c64, #c40022);
-  box-shadow: inset 0px 0px 0px 1px #b0001e;
+  background-image: radial-gradient(#d64d64, #c40022);
+  box-shadow: inset 0px 0px 0px 1px #b0001f;
 }
 
 .light, .component-status {
-  background: #e5e5e5;
+  background: #e6e6e6;
   border-radius: 6px;
   display: inline-block;
   height: 12px;
@@ -477,7 +477,7 @@ body * {
 }
 
 .light.major_outage, .component-status.major_outage {
-  background: #e5e5e5;
+  background: #e6e6e6;
   border-radius: 6px;
   display: inline-block;
   height: 12px;
@@ -485,12 +485,12 @@ body * {
   overflow: hidden;
   text-indent: -9999px;
   width: 12px;
-  background-image: radial-gradient(#d54c64, #c40022);
-  box-shadow: inset 0px 0px 0px 1px #b0001e;
+  background-image: radial-gradient(#d64d64, #c40022);
+  box-shadow: inset 0px 0px 0px 1px #b0001f;
 }
 
 .light.partial_outage, .component-status.partial_outage {
-  background: #e5e5e5;
+  background: #e6e6e6;
   border-radius: 6px;
   display: inline-block;
   height: 12px;
@@ -498,12 +498,12 @@ body * {
   overflow: hidden;
   text-indent: -9999px;
   width: 12px;
-  background-image: radial-gradient(#eda464, #e67e22);
-  box-shadow: inset 0px 0px 0px 1px #cf711e;
+  background-image: radial-gradient(#eea564, #e67e22);
+  box-shadow: inset 0px 0px 0px 1px #cf711f;
 }
 
 .light.degraded_performance, .component-status.degraded_performance {
-  background: #e5e5e5;
+  background: #e6e6e6;
   border-radius: 6px;
   display: inline-block;
   height: 12px;
@@ -511,12 +511,12 @@ body * {
   overflow: hidden;
   text-indent: -9999px;
   width: 12px;
-  background-image: radial-gradient(#f5d557, #f1c40f);
-  box-shadow: inset 0px 0px 0px 1px #d8b00d;
+  background-image: radial-gradient(#f5d657, #f1c40f);
+  box-shadow: inset 0px 0px 0px 1px #d9b00e;
 }
 
 .light.operational, .component-status.operational {
-  background: #e5e5e5;
+  background: #e6e6e6;
   border-radius: 6px;
   display: inline-block;
   height: 12px;
@@ -524,12 +524,27 @@ body * {
   overflow: hidden;
   text-indent: -9999px;
   width: 12px;
-  background-image: radial-gradient(#8bc368, #5aaa28);
+  background-image: radial-gradient(#8cc469, #5aaa28);
   box-shadow: inset 0px 0px 0px 1px #519924;
 }
 
+.modal.maintenance-policy .modal-header .close {
+  font-size: 24px;
+  height: 32px;
+  line-height: 32px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 32px;
+}
+
+.modal.maintenance-policy .text-center {
+  text-align: center;
+}
+
 .rax-banner {
-  background: #e5e5e5;
+  background: #e6e6e6;
   padding: 120px 0;
   text-align: center;
 }
@@ -608,7 +623,7 @@ body * {
 }
 
 .rax-ceiling .support-link a {
-  color: #3f3f3f;
+  color: #404040;
   text-decoration: none;
 }
 
@@ -652,7 +667,7 @@ body * {
 
 .layout-content.status.status-index .components-section .components-toggle {
   background: #f2f2f2;
-  border: solid 1px #e5e5e5;
+  border: solid 1px #e6e6e6;
   border-radius: 4px;
   display: block;
   padding: 0.75rem 1.25rem;
@@ -809,6 +824,13 @@ body * {
   color: white;
 }
 
+.scheduled-maintenances-container .maintenance-policy-link {
+  display: inline-block;
+  font-size: 12px;
+  margin-left: 2em;
+  vertical-align: middle;
+}
+
 .layout-content.status .incidents-list.format-expanded .status-day .date {
   border: none;
   color: #666666;
@@ -942,7 +964,7 @@ body.index #loading-message.fade-out {
 }
 
 .rax-navbar .logo:hover, .rax-navbar .logo:focus, .rax-navbar .logo:active {
-  background-color: #b0001e;
+  background-color: #b0001f;
 }
 
 @media only screen and (min-width: 700px) {
