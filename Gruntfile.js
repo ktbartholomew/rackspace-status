@@ -62,13 +62,13 @@ module.exports = function (grunt) {
                           }
 
                           request.get({
-                            url: 'http://rackspace-status-test.polystackdesign.com' + (req.url || '/'),
+                            url: 'http://www.rackspacestatus.com' + (req.url || '/'),
                             headers: {
                                 'Authorization': 'OAuth ' + process.env.SP_API_KEY
                             }
                           }, function (error, response, body) {
 
-                              response.body = response.body.replace(/rackspace-status-test\.polystackdesign\.com/g,'localhost:3000');
+                              response.body = response.body.replace(/www\.rackspacestatus\.com/g,'localhost:3000');
                               var $ = cheerio.load(response.body);
 
                               if($('.custom-header-container')) {

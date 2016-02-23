@@ -13,6 +13,10 @@ body * {
     -webkit-font-smoothing: antialiased;
 }
 
+.layout-content.status .custom-header-container {
+  margin-bottom: 40px;
+}
+
 .status-index .container {
     /* display: none; */
     max-width: 960px;

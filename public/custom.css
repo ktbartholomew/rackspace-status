@@ -4,7 +4,7 @@
   font-style: normal;
   font-weight: 300;
   src: local("Open Sans Light"), local("OpenSans-Light"), url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTRampu5_7CjHW5spxoeN3Vs.woff2) format("woff2");
-  unicode-range: U0-0FF, U131, U152-153, U2C 6, U2DA, U2DC, U2000-206F, U2074, U20AC, U2212, U2215, UE0FF, UEFFD, UF000;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
 /* latin */
@@ -13,7 +13,7 @@
   font-style: normal;
   font-weight: 400;
   src: local("Open Sans"), local("OpenSans"), url(https://fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3ZBw1xU1rKptJj_0jans920.woff2) format("woff2");
-  unicode-range: U0-0FF, U131, U152-153, U2C 6, U2DA, U2DC, U2000-206F, U2074, U20AC, U2212, U2215, UE0FF, UEFFD, UF000;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
 /* latin */
@@ -22,7 +22,7 @@
   font-style: normal;
   font-weight: 600;
   src: local("Open Sans Semibold"), local("OpenSans-Semibold"), url(https://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNShampu5_7CjHW5spxoeN3Vs.woff2) format("woff2");
-  unicode-range: U0-0FF, U131, U152-153, U2C 6, U2DA, U2DC, U2000-206F, U2074, U20AC, U2212, U2215, UE0FF, UEFFD, UF000;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
 /* latin */
@@ -31,7 +31,7 @@
   font-style: normal;
   font-weight: 700;
   src: local("Open Sans Bold"), local("OpenSans-Bold"), url(https://fonts.gstatic.com/s/opensans/v13/k3k702ZOKiLJc3WVjuplzBampu5_7CjHW5spxoeN3Vs.woff2) format("woff2");
-  unicode-range: U0-0FF, U131, U152-153, U2C 6, U2DA, U2DC, U2000-206F, U2074, U20AC, U2212, U2215, UE0FF, UEFFD, UF000;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
 body,
@@ -158,7 +158,7 @@ body * {
 }
 
 .layout-content.status.status-index .incidents-list .incident-title.impact-minor a {
-  color: #191919;
+  color: #1a1a1a;
 }
 
 .layout-content.status.status-index .incidents-list .incident-title.impact-minor + .updates-container {
@@ -231,7 +231,7 @@ body * {
 
 .layout-content.status.status-incident > .container .incident-name.impact-minor {
   background: #f1c40f;
-  color: #191919;
+  color: #1a1a1a;
 }
 
 .layout-content.status.status-incident > .container .incident-name.impact-major {
@@ -340,7 +340,7 @@ body * {
 }
 
 .layout-content.status.status-index .unresolved-incidents .unresolved-incident.impact-minor .incident-title a {
-  color: #191919;
+  color: #1a1a1a;
 }
 
 .layout-content.status.status-index .unresolved-incidents .unresolved-incident.impact-minor .incident-details {
@@ -374,7 +374,7 @@ body * {
   background: gray;
   border-bottom: none;
   margin-bottom: 0;
-  padding: 0.75rem 1.25rem;
+  padding: .75rem 1.25rem;
 }
 
 .layout-content.status.status-index .scheduled-maintenances-container .scheduled-maintenance .incident-title a, .layout-content.status.status-index .scheduled-maintenances-container .scheduled-maintenance .incident-title small {
@@ -694,9 +694,9 @@ body * {
 }
 
 .layout-content.status.status-index .components-section .components-toggle .fa-caret-down {
-  -webkit-transition: -webkit-transform 0.3s ease-in-out;
-  -moz-transition: -moz-transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out;
+  -webkit-transition: -webkit-transform;
+  -moz-transition: -moz-transform;
+  transition: transform;
 }
 
 .layout-content.status.status-index .components-section .components-container.one-column {
@@ -740,7 +740,7 @@ body * {
 }
 
 #custom-footer {
-  background: #191919;
+  background: #1a1a1a;
   padding: 30px 0;
 }
 
@@ -843,7 +843,7 @@ body * {
 
 body.index #loading-message {
   background: white;
-  color: #191919;
+  color: #1a1a1a;
   display: none;
   font-size: 36px;
   height: calc(100vh - 104px);
@@ -916,7 +916,7 @@ body.index #loading-message.fade-out {
 }
 
 .rax-navbar {
-  background: #191919;
+  background: #1a1a1a;
 }
 
 .rax-navbar .navbar-items {
@@ -952,6 +952,7 @@ body.index #loading-message.fade-out {
   position: absolute;
   left: 0;
   width: 150%;
+  z-index: 1;
 }
 
 .rax-navbar .navbar-item ul a {

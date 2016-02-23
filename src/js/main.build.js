@@ -17088,7 +17088,7 @@ __p+='\n    <div class="rax-banner enter '+
 ((__t=( obj.status.description ))==null?'':__t)+
 '</h1>\n    </div>\n';
  } /* endif */ 
-__p+='\n';
+__p+='\n<div class="container">\n  <div class="rax-temporary-alert">\n    <div class="heading">\n      <h3>Welcome to the preview of the new Rackspace status page</h3>\n      <p>This page is a preview of the new Rackspace status page launching in 2016. Please note that this page is still in development, and it ​<strong>should not be used to track the status of Rackspace services</strong>. Until this page is officially launched, please continue to use <a href="https://status.rackspace.com">https://status.rackspace.com</a> to view and monitor the latest status for Rackspace services.</p>\n    </div>\n  </div>\n</div>\n\n';
 return __p;
 }
 };
